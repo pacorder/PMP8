@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMP 2026 | Preparación Examen PMP · PMBOK 8</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0f;
+    --paper: #f5f2ec;
+    --gold: #c9a84c;
+    --gold-light: #e8d08a;
+    --teal: #1a6b6b;
+    --teal-light: #2a9090;
+    --red: #c0392b;
+    --green: #1a7a4a;
+    --accent: #e85d2f;
+    --mid: #6b6b7a;
+    --card-bg: #ffffff;
+    --border: rgba(10,10,15,0.1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ───────────────────────── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    background: var(--ink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 2rem;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: 
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(201,168,76,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 60% at 10% 80%, rgba(26,107,107,0.2) 0%, transparent 70%);
+  }
+
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image: 
+      linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(201,168,76,0.5);
+    color: var(--gold);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+    background: rgba(201,168,76,0.07);
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.8rem, 7vw, 6rem);
+    font-weight: 800;
+    color: #fff;
+    text-align: center;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    animation: fadeUp 0.6s 0.1s ease both;
+    position: relative;
+  }
+
+  .hero h1 .highlight {
+    color: var(--gold);
+    display: block;
+  }
+
+  .hero-sub {
+    margin-top: 1.5rem;
+    color: rgba(255,255,255,0.55);
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    font-weight: 300;
+    text-align: center;
+    max-width: 560px;
+    line-height: 1.7;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-warning {
+    margin-top: 2rem;
+    background: rgba(232,93,47,0.12);
+    border: 1px solid rgba(232,93,47,0.4);
+    border-left: 4px solid var(--accent);
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    max-width: 560px;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .hero-warning strong { color: var(--accent); }
+
+  .hero-cta {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--ink);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    padding: 0.85rem 2rem;
+    border-radius: 0.4rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.3); }
+
+  .btn-outline {
+    background: transparent;
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    padding: 0.85rem 2rem;
+    border-radius: 0.4rem;
+    border: 1px solid rgba(255,255,255,0.25);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+  .scroll-hint span { font-size: 1.2rem; }
+
+  @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+  /* ── NAV TABS ───────────────────── */
+  .nav-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(245,242,236,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-tabs {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    scrollbar-width: none;
+  }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+
+  .nav-tab {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 1rem 1.2rem;
+    border: none;
+    background: transparent;
+    color: var(--mid);
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+  }
+  .nav-tab:hover { color: var(--ink); }
+  .nav-tab.active { color: var(--teal); border-bottom-color: var(--teal); }
+
+  /* ── SECTIONS ───────────────────── */
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-sub {
+    color: var(--mid);
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  /* ── TIPS SECTION ───────────────── */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .tip-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .tip-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--tip-color, var(--teal));
+  }
+  .tip-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+
+  .tip-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+  .tip-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .tip-card p { font-size: 0.88rem; color: var(--mid); line-height: 1.6; }
+
+  .tip-tag {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--tip-color, var(--teal));
+    background: color-mix(in srgb, var(--tip-color, var(--teal)) 10%, transparent);
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+  }
+
+  /* ── QUIZ SECTION ───────────────── */
+  #quiz-container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .quiz-progress {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .progress-bar-wrap {
+    flex: 1;
+    height: 6px;
+    background: rgba(0,0,0,0.08);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--teal), var(--teal-light));
+    border-radius: 3px;
+    transition: width 0.4s ease;
+  }
+
+  .progress-label {
+    font-size: 0.8rem;
+    color: var(--mid);
+    white-space: nowrap;
+    font-weight: 500;
+  }
+
+  .quiz-domain-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: rgba(26,107,107,0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .quiz-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+
+  .quiz-question {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .quiz-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.9rem 1.1rem;
+    border: 1.5px solid var(--border);
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: transparent;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .quiz-option:hover:not(:disabled) { border-color: var(--teal); background: rgba(26,107,107,0.04); }
+  .quiz-option.correct { border-color: var(--green); background: rgba(26,122,74,0.08); color: var(--green); }
+  .quiz-option.wrong { border-color: var(--red); background: rgba(192,57,43,0.08); color: var(--red); }
+  .quiz-option:disabled { cursor: default; }
+
+  .option-letter {
+    width: 22px; height: 22px;
+    min-width: 22px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 1.5px solid currentColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    font-family: 'Syne', sans-serif;
+  }
+
+  .quiz-feedback {
+    margin-top: 1.25rem;
+    padding: 1rem 1.25rem;
+    border-radius: 0.6rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    display: none;
+  }
+  .quiz-feedback.show { display: block; animation: fadeUp 0.3s ease; }
+  .quiz-feedback.success { background: rgba(26,122,74,0.1); border-left: 4px solid var(--green); }
+  .quiz-feedback.error { background: rgba(192,57,43,0.1); border-left: 4px solid var(--red); }
+
+  .quiz-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+
+  .score-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--teal);
+  }
+
+  .btn-next {
+    background: var(--ink);
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.4rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: none;
+  }
+  .btn-next.show { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .btn-next:hover { background: var(--teal); transform: translateX(3px); }
+
+  .quiz-result {
+    text-align: center;
+    padding: 3rem 1rem;
+    display: none;
+  }
+  .quiz-result.show { display: block; animation: fadeUp 0.5s ease; }
+  .result-score {
+    font-family: 'Syne', sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--teal);
+    line-height: 1;
+  }
+  .result-label { font-size: 1.1rem; color: var(--mid); margin-top: 0.5rem; margin-bottom: 2rem; }
+  .result-message {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 420px;
+    margin: 0 auto 2rem;
+  }
+
+  /* ── DOMAINS SECTION ─────────────── */
+  .domains-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .domain-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .domain-item:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); }
+
+  .domain-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .domain-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--gold);
+    min-width: 2rem;
+  }
+
+  .domain-info { flex: 1; }
+  .domain-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+  .domain-pct {
+    font-size: 0.8rem;
+    color: var(--mid);
+  }
+
+  .domain-arrow {
+    font-size: 1rem;
+    color: var(--mid);
+    transition: transform 0.3s;
+  }
+  .domain-item.open .domain-arrow { transform: rotate(180deg); }
+
+  .domain-weight-bar {
+    height: 4px;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+    border-radius: 0 0 0.75rem 0.75rem;
+    transition: width 0.5s ease;
+  }
+
+  .domain-body {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+  .domain-item.open .domain-body {
+    max-height: 800px;
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  .domain-body ul { list-style: none; padding: 0; }
+  .domain-body li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88rem;
+    color: var(--mid);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    line-height: 1.5;
+  }
+  .domain-body li:last-child { border-bottom: none; }
+  .domain-body li::before { content: '→'; color: var(--teal); font-weight: 700; flex-shrink: 0; }
+
+  /* ── FLASHCARDS SECTION ──────────── */
+  .flash-wrap {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .flashcard {
+    perspective: 1200px;
+    height: 260px;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+  }
+
+  .flashcard-inner {
+    position: relative;
+    width: 100%; height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(.4,0,.2,1);
+  }
+  .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+
+  .flashcard-front, .flashcard-back {
+    position: absolute; inset: 0;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  }
+
+  .flashcard-front {
+    background: var(--ink);
+    color: #fff;
+  }
+
+  .flashcard-back {
+    background: var(--teal);
+    color: #fff;
+    transform: rotateY(180deg);
+  }
+
+  .fc-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 1rem;
+  }
+
+  .fc-term {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .fc-def {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    opacity: 0.9;
+  }
+
+  .fc-hint {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--mid);
+    margin-bottom: 1rem;
+  }
+
+  .flash-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .btn-flash {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    color: var(--ink);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.65rem 1.4rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-flash:hover { border-color: var(--teal); color: var(--teal); }
+  .flash-counter { font-size: 0.85rem; color: var(--mid); font-weight: 500; }
+
+  /* ── UDEMY BANNER ────────────────── */
+  .udemy-banner {
+    background: linear-gradient(135deg, var(--ink) 0%, #1a1a2e 100%);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .udemy-banner::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.2) 0%, transparent 70%);
+  }
+
+  .udemy-icon {
+    font-size: 3rem;
+    flex-shrink: 0;
+  }
+
+  .udemy-text { flex: 1; min-width: 200px; }
+  .udemy-text h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+  .udemy-text p {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  .udemy-stars {
+    color: var(--gold);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  /* ── FOOTER ──────────────────────── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* ── RESPONSIVE ──────────────────── */
+  @media (max-width: 600px) {
+    .tips-grid { grid-template-columns: 1fr; }
+    .quiz-card { padding: 1.25rem; }
+    .domain-header { padding: 1rem; }
+    .udemy-banner { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ───────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-badge">🎯 Preparación PMP 2026 · PMBOK 8ª Ed.</div>
+
+  <h1>
+    Certifícate con
+    <span class="highlight">Confianza</span>
+  </h1>
+
+  <p class="hero-sub">
+    Domina el examen PMP con la metodología actualizada. Ejercicios interactivos, flashcards y tips reales basados en los dominios vigentes.
+  </p>
+
+  <div class="hero-warning">
+    ⚠️ <strong>¡Importante!</strong> El examen PMP actual está basado en el <strong>PMBOK 8ª Edición</strong> y el <em>Examination Content Outline (ECO)</em> vigente. Prepararse con el PMBOK 5, 6 o incluso 7 es estudiar un examen que <strong>ya no existe</strong> — no pierdas tiempo ni dinero en material obsoleto.
+  </div>
+
+  <div class="hero-cta">
+    <button class="btn-primary" onclick="goTo('quiz')">🧠 Practicar ahora</button>
+    <a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252z" target="_blank" class="btn-outline">📚 Curso Completo →</a>
+  </div>
+
+  <div class="scroll-hint">
+    <span>↓</span> Explorar
+  </div>
+</section>
+
+<!-- ── NAV TABS ───────────────────────────────────── -->
+<div class="nav-wrap">
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="switchSection('tips', this)">💡 Tips</button>
+    <button class="nav-tab" onclick="switchSection('quiz', this)">🧠 Quiz</button>
+    <button class="nav-tab" onclick="switchSection('domains', this)">📋 Dominios</button>
+    <button class="nav-tab" onclick="switchSection('flash', this)">🃏 Flashcards</button>
+    <button class="nav-tab" onclick="switchSection('curso', this)">🎓 Curso</button>
+  </div>
+</div>
+
+<!-- ── TIPS ───────────────────────────────────────── -->
+<section id="tips" class="section active">
+  <div class="container">
+    <h2 class="section-title">Tips para el Examen</h2>
+    <p class="section-sub">Estrategias probadas por candidatos que aprobaron el PMP con el formato actual.</p>
+
+    <div class="tips-grid">
+      <div class="tip-card" style="--tip-color:#1a6b6b">
+        <div class="tip-icon">🧩</div>
+        <h3>Piensa en contexto, no en procesos</h3>
+        <p>El examen actual evalúa tu <em>juicio situacional</em>. Olvida memorizar procesos del PMBOK 6. Pregúntate: "¿Qué haría un PM experimentado aquí?"</p>
+        <span class="tip-tag">Mentalidad</span>
+      </div>
+
+      <div class="tip-card" style="--tip-color:#c9a84c">
+        <div class="tip-icon">⚡</div>
+        <h3>Domina el enfoque híbrido</h3>
+        <p>~50% del examen es ágil/híbrido. Entiende cuándo aplicar Scrum, Kanban o enfoques predictivos según el contexto del proyecto.</p>
+        <span class="tip-tag">Contenido</span>
+      </div>
+
+      <div class="tip-card" style="--tip-color:#e85d2f">
+        <div class="tip-icon">🎯</div>
+        <h3>El "mejor" no siempre es el ideal teórico</h3>
+        <p>En preguntas situacionales, elige la respuesta que muestra <strong>liderazgo proactivo</strong>, no solo la solución técnica correcta.</p>
+        <span class="tip-tag">Estrategia</span>
+      </div>
+
+      <div class="tip-card" style="--tip-color:#6b4a9e">
+        <div class="tip-icon">📝</div>
+        <h3>Lee las preguntas de atrás para adelante</h3>
+        <p>Lee primero la pregunta (al final) y luego el escenario. Sabrás qué buscar en el texto y ahorrarás tiempo valioso.</p>
+        <span class="tip-tag">Técnica</span>
+      </div>
+
+      <div class="tip-card" style="--tip-color:#1a7a4a">
+        <div class="tip-icon">🔄</div>
+        <h3>Marca y revisa, no te quedes atascado</h3>
+        <p>Tienes 230 minutos para 180 preguntas. Si dudas más de 90 segundos en una, márcala y continúa. Vuelve al final con mente fresca.</p>
+        <span class="tip-tag">Gestión de tiempo</span>
+      </div>
+
+      <div class="tip-card" style="--tip-color:#c0392b">
+        <div class="tip-icon">🤝</div>
+        <h3>Los stakeholders SIEMPRE importan</h3>
+        <p>Ante dudas entre dos respuestas, elige la que <strong>involucra al equipo o stakeholders</strong> de forma colaborativa. El PM moderno lidera, no controla.</p>
+        <span class="tip-tag">Contenido</span>
+      </div>
+
+      <div class="tip-card" style="--tip-color:#1a6b6b">
+        <div class="tip-icon">📊</div>
+        <h3>Entiende los principios, no los memorices</h3>
+        <p>El PMBOK 7 tiene 12 principios y 8 dominios de desempeño. Comprende su <em>propósito</em>, no los definas de memoria. El examen mide aplicación.</p>
+        <span class="tip-tag">Estudio</span>
+      </div>
+
+      <div class="tip-card" style="--tip-color:#c9a84c">
+        <div class="tip-icon">🧘</div>
+        <h3>Simula condiciones reales antes del examen</h3>
+        <p>Realiza al menos 3 simulacros de 180 preguntas en 230 min antes del examen real. La resistencia mental es tan importante como el conocimiento.</p>
+        <span class="tip-tag">Preparación</span>
+      </div>
+
+      <div class="tip-card" style="--tip-color:#e85d2f">
+        <div class="tip-icon">🚫</div>
+        <h3>Elimina las respuestas "reactivas"</h3>
+        <p>Si una opción muestra al PM <em>reaccionando</em> a una crisis sin planificación previa, probablemente esté mal. El PMP ideal <strong>anticipa</strong>.</p>
+        <span class="tip-tag">Estrategia</span>
+      </div>
+    </div>
+
+    <!-- Udemy mini-banner -->
+    <div class="udemy-banner" style="margin-top:2.5rem">
+      <div class="udemy-icon">🎓</div>
+      <div class="udemy-text">
+        <span class="udemy-stars">★★★★★</span>
+        <h3>¿Quieres una preparación completa y estructurada?</h3>
+        <p>Accede al curso con más de 200 preguntas de práctica, explicaciones detalladas, y contenido alineado 100% con el examen actual — no versiones obsoletas.</p>
+      </div>
+      <a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252z" target="_blank" class="btn-primary" style="margin-top:0;flex-shrink:0">Ver Curso →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── QUIZ ───────────────────────────────────────── -->
+<section id="quiz" class="section">
+  <div class="container">
+    <h2 class="section-title">Quiz de Práctica</h2>
+    <p class="section-sub">Preguntas situacionales tipo examen PMP. Sin trampa — solo el nivel real.</p>
+
+    <div id="quiz-container">
+      <div class="quiz-progress">
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" id="qProgress" style="width:0%"></div>
+        </div>
+        <span class="progress-label" id="qLabel">0 / 10</span>
+      </div>
+
+      <div id="qCard">
+        <div class="quiz-domain-tag" id="qDomain"></div>
+        <div class="quiz-card">
+          <div class="quiz-question" id="qText"></div>
+          <div class="quiz-options" id="qOptions"></div>
+          <div class="quiz-feedback" id="qFeedback"></div>
+          <div class="quiz-actions">
+            <div class="score-pill">✅ <span id="qScore">0</span> correctas</div>
+            <button class="btn-next" id="qNext" onclick="nextQuestion()">Siguiente →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-result" id="qResult">
+        <div class="result-score" id="rScore"></div>
+        <div class="result-label">de 10 preguntas correctas</div>
+        <div class="result-message" id="rMsg"></div>
+        <button class="btn-primary" onclick="restartQuiz()" style="margin:0 auto;display:inline-flex">🔄 Intentar de nuevo</button>
+        <div style="margin-top:1rem">
+          <a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252z" target="_blank" class="btn-outline" style="border-color:var(--teal);color:var(--teal)">📚 Más práctica en el curso</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DOMAINS ────────────────────────────────────── -->
+<section id="domains" class="section">
+  <div class="container">
+    <h2 class="section-title">8 Dominios del Examen</h2>
+    <p class="section-sub">El examen PMP actual evalúa estos dominios de desempeño. Conocerlos es tu mapa de estudio.</p>
+
+    <div class="domains-list" id="domainsList"></div>
+
+    <div class="udemy-banner">
+      <div class="udemy-icon">📘</div>
+      <div class="udemy-text">
+        <h3>Aprende cada dominio en profundidad</h3>
+        <p>El curso cubre los 8 dominios con casos prácticos, preguntas de práctica y explicaciones de por qué cada respuesta es correcta o incorrecta.</p>
+      </div>
+      <a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252z" target="_blank" class="btn-primary" style="flex-shrink:0">Ir al Curso →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FLASHCARDS ─────────────────────────────────── -->
+<section id="flash" class="section">
+  <div class="container">
+    <h2 class="section-title">Flashcards PMBOK 7</h2>
+    <p class="section-sub">Términos clave que debes dominar. Haz clic en la tarjeta para ver la definición.</p>
+
+    <div class="flash-wrap">
+      <p class="fc-hint">👆 Clic para voltear · Navega con los botones</p>
+      <div class="flashcard" id="flashcard" onclick="flipCard()">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="fc-label">Término</div>
+            <div class="fc-term" id="fcTerm"></div>
+          </div>
+          <div class="flashcard-back">
+            <div class="fc-label">Definición</div>
+            <div class="fc-def" id="fcDef"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flash-nav">
+        <button class="btn-flash" onclick="prevCard()">← Anterior</button>
+        <span class="flash-counter" id="fcCounter">1 / 12</span>
+        <button class="btn-flash" onclick="nextCard()">Siguiente →</button>
+      </div>
+    </div>
+
+    <div class="udemy-banner" style="margin-top:3rem">
+      <div class="udemy-icon">💡</div>
+      <div class="udemy-text">
+        <h3>Más de 200 conceptos dominados paso a paso</h3>
+        <p>No memorices definiciones — entiéndelas en contexto real. El curso está diseñado para que <em>recuerdes</em>, no para que repitas.</p>
+      </div>
+      <a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252z" target="_blank" class="btn-primary" style="flex-shrink:0">Ver Curso →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CURSO ───────────────────────────────────────── -->
+<section id="curso" class="section">
+  <div class="container" style="max-width:700px">
+    <h2 class="section-title">El Curso Correcto para el Examen Correcto</h2>
+    <p class="section-sub">
+      El examen PMP ha cambiado radicalmente. Prepararse con el PMBOK 5 o 6 es como estudiar para un examen de hace 5 años — el contenido, el formato y la mentalidad son completamente distintos.
+    </p>
+
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:1rem;padding:2rem;margin-bottom:1.5rem">
+      <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:1rem;color:var(--red)">❌ Lo que ya NO evalúa el examen PMP</h3>
+      <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.6rem">
+        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">✗ Memorizar grupos de procesos del PMBOK 6 (Iniciación → Cierre)</li>
+        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">✗ Calcular EVA/EVM de forma aislada sin contexto decisional</li>
+        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">✗ Recitar definiciones exactas de áreas de conocimiento</li>
+        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">✗ Preguntas con una sola respuesta "técnica" correcta</li>
+      </ul>
+    </div>
+
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:1rem;padding:2rem;margin-bottom:2rem">
+      <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:1rem;color:var(--green)">✅ Lo que SÍ evalúa el examen actual</h3>
+      <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.6rem">
+        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">→ Juicio situacional en entornos ágiles, predictivos e híbridos</li>
+        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">→ Liderazgo de equipos, resolución de conflictos y coaching</li>
+        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">→ Entrega de valor, gestión de beneficios y satisfacción del cliente</li>
+        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">→ Los 12 principios y 8 dominios del PMBOK 7</li>
+        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">→ Aplicación práctica de Scrum, Kanban y marcos ágiles</li>
+      </ul>
+    </div>
+
+    <div class="udemy-banner">
+      <div style="flex:1">
+        <span class="udemy-stars">★★★★★</span>
+        <h3 style="font-family:'Syne',sans-serif;font-weight:800;color:#fff;font-size:1.4rem;margin-bottom:0.75rem">
+          PMP Exam Prep Mastery<br><span style="color:var(--gold)">PMBOK 7th Edition</span>
+        </h3>
+        <p style="color:rgba(255,255,255,0.6);font-size:0.88rem;line-height:1.7;margin-bottom:1.5rem">
+          El único curso que prepara para el examen <strong style="color:#fff">que existe hoy</strong>, no para el de hace 3 años. Preguntas situacionales reales, explicaciones profundas, y una metodología que construye comprensión — no memorización mecánica.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem">
+          <span style="background:rgba(201,168,76,0.15);color:var(--gold);font-size:0.75rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:1rem;letter-spacing:0.05em">✓ PMBOK 7 completo</span>
+          <span style="background:rgba(201,168,76,0.15);color:var(--gold);font-size:0.75rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:1rem;letter-spacing:0.05em">✓ Enfoque ágil/híbrido</span>
+          <span style="background:rgba(201,168,76,0.15);color:var(--gold);font-size:0.75rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:1rem;letter-spacing:0.05em">✓ 200+ preguntas prácticas</span>
+          <span style="background:rgba(201,168,76,0.15);color:var(--gold);font-size:0.75rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:1rem;letter-spacing:0.05em">✓ Simulacros de examen</span>
+        </div>
+        <a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252z" target="_blank" class="btn-primary" style="font-size:1rem;padding:1rem 2rem">
+          🚀 Inscribirme al Curso
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────── -->
+<footer>
+  <p>PMP Exam Prep · Basado en PMBOK 7ª Edición · <a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252z" target="_blank">Ver Curso en Udemy →</a></p>
+</footer>
+
+<script>
+// ── NAVIGATION ──────────────────────────────────────
+function switchSection(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  if (id === 'quiz' && currentQ === 0) initQuiz();
+  if (id === 'flash') renderFlash();
+  if (id === 'domains') renderDomains();
+}
+
+function goTo(id) {
+  const btn = [...document.querySelectorAll('.nav-tab')].find(b => b.getAttribute('onclick').includes(`'${id}'`));
+  if (btn) switchSection(id, btn);
+  document.querySelector('.nav-wrap').scrollIntoView({ behavior: 'smooth' });
+}
+
+// ── QUIZ DATA ────────────────────────────────────────
+const questions = [
+  {
+    domain: "Stakeholder Performance Domain",
+    q: "Estás gestionando un proyecto de transformación digital. Un stakeholder clave se vuelve cada vez más crítico en las reuniones y genera tensión en el equipo. ¿Cuál es tu MEJOR primera acción?",
+    opts: ["Escalar la situación al patrocinador del proyecto", "Solicitar al stakeholder que asista a menos reuniones", "Reunirte individualmente con el stakeholder para entender sus preocupaciones reales", "Documentar el comportamiento en el registro de riesgos"],
+    ans: 2,
+    exp: "El PM efectivo busca primero entender la raíz del problema. Una reunión 1:1 permite identificar si hay preocupaciones legítimas no atendidas. Escalar o limitar su participación sería prematuro y dañaría la relación."
+  },
+  {
+    domain: "Team Performance Domain",
+    q: "Tu equipo ágil lleva 3 sprints con velocidad inconsistente. En la retrospectiva, algunos miembros culpan al Product Owner por cambios constantes en el backlog. ¿Qué debes hacer PRIMERO?",
+    opts: ["Reemplazar al Product Owner por alguien más estable", "Facilitar una conversación estructurada entre el equipo y el Product Owner sobre expectativas y procesos", "Limitar los cambios al backlog con un proceso de control de cambios formal", "Documentar el problema y esperar a que mejore en el próximo sprint"],
+    ans: 1,
+    exp: "En un entorno ágil, la colaboración y comunicación son fundamentales. Facilitar una conversación honesta aborda la causa raíz. Las otras opciones son reactivas o imponen rigidez contraproducente en un contexto ágil."
+  },
+  {
+    domain: "Uncertainty Performance Domain",
+    q: "Identificas un riesgo con alta probabilidad e impacto alto en tu proyecto. Sin embargo, el costo de mitigarlo supera el presupuesto disponible. ¿Cuál es la respuesta MÁS apropiada?",
+    opts: ["Ignorar el riesgo ya que no hay presupuesto para mitigarlo", "Transferir el riesgo a un tercero mediante un contrato o seguro", "Aceptar el riesgo activamente y definir un plan de contingencia detallado", "Cancelar el proyecto porque el riesgo es demasiado alto"],
+    ans: 2,
+    exp: "Cuando la mitigación no es económicamente viable, la aceptación activa con un plan de contingencia es la respuesta correcta. Se documenta el riesgo, se define un trigger y acciones de respuesta sin gastar en prevención."
+  },
+  {
+    domain: "Planning Performance Domain",
+    q: "Tu proyecto tiene requisitos altamente cambiantes y el cliente no puede definir el alcance completo al inicio. ¿Qué enfoque de ciclo de vida es el MÁS adecuado?",
+    opts: ["Predictivo (cascada), con un cronograma detallado desde el inicio", "Ágil iterativo, entregando valor en ciclos cortos con retroalimentación continua", "No planificar nada hasta que el cliente tenga los requisitos claros", "Usar solo el juicio del PM para tomar decisiones sin involucrar al cliente"],
+    ans: 1,
+    exp: "Con alta incertidumbre en requisitos, un ciclo de vida ágil o iterativo permite adaptarse al cambio, validar con el cliente frecuentemente y reducir el riesgo de construir lo incorrecto."
+  },
+  {
+    domain: "Delivery Performance Domain",
+    q: "En la revisión de sprint, el cliente rechaza una funcionalidad que el equipo consideraba 'terminada'. El equipo argumenta que cumplió con la Definition of Done. ¿Qué debes hacer?",
+    opts: ["Defender al equipo y decirle al cliente que la funcionalidad está completa según los estándares acordados", "Investigar por qué la Definition of Done no refleja las expectativas reales del cliente y trabajar en alinearlas", "Eliminar la Definition of Done para dar más flexibilidad al cliente", "Escalar al sponsor para que tome la decisión"],
+    ans: 1,
+    exp: "La Definition of Done debe reflejar el valor real para el cliente. Si hay desalineación, es un problema de comunicación de expectativas. El PM debe facilitar su actualización colaborativa, no defender una herramienta por encima del valor entregado."
+  },
+  {
+    domain: "Measurement Performance Domain",
+    q: "Tu proyecto tiene SPI = 0.85 y CPI = 1.10. ¿Cuál es la interpretación más precisa?",
+    opts: ["El proyecto está atrasado y gastando de más", "El proyecto está adelantado en tiempo pero gastando de más", "El proyecto está atrasado en cronograma pero por debajo del presupuesto", "El proyecto está adelantado y por debajo del presupuesto"],
+    ans: 2,
+    exp: "SPI < 1 indica retraso en cronograma. CPI > 1 indica que se está gastando menos de lo planeado. El equipo es eficiente con el presupuesto pero necesita acelerar el ritmo de entrega."
+  },
+  {
+    domain: "Stakeholder Performance Domain",
+    q: "Un stakeholder poderoso te pide agregar funcionalidades que claramente están fuera del alcance acordado, argumentando que 'solo son pequeñas cosas'. ¿Cuál es tu MEJOR respuesta?",
+    opts: ["Agregar las funcionalidades para mantener la relación con el stakeholder", "Rechazar categóricamente cualquier cambio fuera del alcance", "Reconocer la solicitud, evaluar el impacto en alcance/tiempo/costo y llevarla al proceso de control de cambios", "Ignorar la solicitud y esperar a que el stakeholder la olvide"],
+    ans: 2,
+    exp: "Todo cambio, por pequeño que parezca, debe pasar por el proceso de control de cambios. Esto protege al proyecto, da visibilidad al stakeholder sobre el impacto real y mantiene la integridad del proyecto."
+  },
+  {
+    domain: "Team Performance Domain",
+    q: "Eres PM de un equipo distribuido en 4 zonas horarias. Notas que los miembros en Asia participan muy poco en las reuniones de equipo. ¿Qué debes hacer?",
+    opts: ["Decirles que deben participar más o serán removidos del equipo", "Reorganizar los horarios de reuniones y explorar alternativas asíncronas para incluirlos efectivamente", "Aceptar que la participación baja es normal en equipos distribuidos", "Reemplazar a los miembros de Asia con personas en zonas horarias más convenientes"],
+    ans: 1,
+    exp: "La inclusión efectiva en equipos distribuidos requiere adaptaciones estructurales. Rotar horarios, usar herramientas asíncronas y crear canales alternativos de participación es la respuesta de un líder efectivo."
+  },
+  {
+    domain: "Delivery Performance Domain",
+    q: "A mitad del proyecto, el sponsor te informa que el presupuesto se redujo en 20%. El cronograma y alcance actuales son inviables. ¿Cuál es tu PRIMER paso?",
+    opts: ["Continuar con el plan actual y reportar el problema solo si ocurre un retraso", "Analizar el impacto, identificar opciones de ajuste de alcance/cronograma y presentar alternativas al sponsor para decisión", "Reducir la calidad del entregable para mantener el alcance y el cronograma", "Renunciar al proyecto por ser inviable"],
+    ans: 1,
+    exp: "El PM debe analizar el impacto real y presentar opciones claras al sponsor. No es el PM quien decide qué sacrificar — es una decisión de negocio que requiere información objetiva y participación de los tomadores de decisiones."
+  },
+  {
+    domain: "Uncertainty Performance Domain",
+    q: "En un proyecto ágil, el equipo descubre durante el sprint que una tecnología clave tiene una limitación crítica no conocida previamente. ¿Qué debe hacer el PM?",
+    opts: ["Esperar al final del sprint para reportarlo en la retrospectiva", "Escalar inmediatamente al sponsor y pausar el sprint", "Reunir al equipo para evaluar el impacto, explorar alternativas y comunicar transparentemente al Product Owner y stakeholders", "Ocultar el problema hasta encontrar una solución para no generar pánico"],
+    ans: 2,
+    exp: "La transparencia y la adaptación temprana son valores ágiles fundamentales. Reunir al equipo, evaluar opciones e informar a los stakeholders permite decisiones informadas rápidas. La opacidad nunca es la respuesta correcta."
+  }
+];
+
+let currentQ = 0, score = 0, answered = false;
+
+function initQuiz() {
+  currentQ = 0; score = 0; answered = false;
+  document.getElementById('qResult').classList.remove('show');
+  document.getElementById('qCard').style.display = 'block';
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = questions[currentQ];
+  document.getElementById('qProgress').style.width = `${(currentQ / questions.length) * 100}%`;
+  document.getElementById('qLabel').textContent = `${currentQ} / ${questions.length}`;
+  document.getElementById('qScore').textContent = score;
+  document.getElementById('qDomain').textContent = q.domain;
+  document.getElementById('qText').textContent = q.q;
+  document.getElementById('qFeedback').className = 'quiz-feedback';
+  document.getElementById('qNext').className = 'btn-next';
+  answered = false;
+
+  const optsEl = document.getElementById('qOptions');
+  optsEl.innerHTML = '';
+  const letters = ['A','B','C','D'];
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-option';
+    btn.innerHTML = `<span class="option-letter">${letters[i]}</span>${opt}`;
+    btn.onclick = () => selectAnswer(i);
+    optsEl.appendChild(btn);
+  });
+}
+
+function selectAnswer(idx) {
+  if (answered) return;
+  answered = true;
+  const q = questions[currentQ];
+  const opts = document.querySelectorAll('.quiz-option');
+  opts.forEach(o => o.disabled = true);
+
+  const fb = document.getElementById('qFeedback');
+  if (idx === q.ans) {
+    opts[idx].classList.add('correct');
+    score++;
+    document.getElementById('qScore').textContent = score;
+    fb.className = 'quiz-feedback success show';
+    fb.innerHTML = `<strong>✅ ¡Correcto!</strong> ${q.exp}`;
+  } else {
+    opts[idx].classList.add('wrong');
+    opts[q.ans].classList.add('correct');
+    fb.className = 'quiz-feedback error show';
+    fb.innerHTML = `<strong>❌ Incorrecto.</strong> La respuesta correcta es <strong>${['A','B','C','D'][q.ans]}</strong>. ${q.exp}`;
+  }
+  document.getElementById('qNext').className = 'btn-next show';
+}
+
+function nextQuestion() {
+  currentQ++;
+  if (currentQ >= questions.length) showResult();
+  else renderQuestion();
+}
+
+function showResult() {
+  document.getElementById('qCard').style.display = 'none';
+  document.getElementById('qProgress').style.width = '100%';
+  document.getElementById('qLabel').textContent = `${questions.length} / ${questions.length}`;
+  const result = document.getElementById('qResult');
+  result.classList.add('show');
+  document.getElementById('rScore').textContent = `${score}/10`;
+  const pct = score / 10;
+  let msg;
+  if (pct >= 0.8) msg = "¡Excelente resultado! Estás en el camino correcto. El examen PMP real requiere consistencia — sigue practicando con el curso para llegar al 100%.";
+  else if (pct >= 0.6) msg = "Buen intento. Hay áreas donde puedes mejorar tu criterio situacional. El curso te ayudará a entender el 'por qué' detrás de cada respuesta.";
+  else msg = "El examen PMP mide juicio, no memoria. Es normal que al inicio el puntaje sea bajo — lo importante es entender la lógica. El curso completo te dará ese fundamento.";
+  document.getElementById('rMsg').textContent = msg;
+}
+
+function restartQuiz() { initQuiz(); }
+
+// ── DOMAINS DATA ─────────────────────────────────────
+const domains = [
+  { num:'01', name:'Stakeholders', pct:'Impacto Clave', weight: 85, items:[
+    'Identificar y analizar expectativas e intereses de todos los stakeholders',
+    'Involucramiento proactivo y estratégico durante todo el proyecto',
+    'Gestión de expectativas: comunicación transparente y oportuna',
+    'Resolución de conflictos entre intereses de diferentes stakeholders',
+    'Construcción y mantenimiento de relaciones colaborativas'
+  ]},
+  { num:'02', name:'Team', pct:'Énfasis Central', weight:90, items:[
+    'Liderazgo de equipos de alto desempeño en entornos complejos',
+    'Coaching, mentoring y desarrollo de capacidades del equipo',
+    'Cultura de equipo: confianza, seguridad psicológica e inclusión',
+    'Gestión de conflictos dentro del equipo de manera constructiva',
+    'Equipos distribuidos y virtuales: desafíos y mejores prácticas'
+  ]},
+  { num:'03', name:'Development Approach & Life Cycle', pct:'Estratégico', weight:75, items:[
+    'Selección del ciclo de vida correcto: predictivo, iterativo, ágil o híbrido',
+    'Criterios para elegir el enfoque según contexto y características del proyecto',
+    'Marcos ágiles: Scrum, Kanban, SAFe — cuándo y cómo aplicarlos',
+    'Hibridación: combinando prácticas predictivas con ágiles efectivamente',
+    'Cadencia de entrega y definición de iteraciones o fases'
+  ]},
+  { num:'04', name:'Planning', pct:'Fundamental', weight:80, items:[
+    'Planificación adaptativa vs. predictiva: cuándo ser más o menos detallado',
+    'Rolling wave planning: planificar progresivamente a medida que se conoce más',
+    'Alineación del plan con la estrategia y objetivos del negocio',
+    'Estimación colaborativa con el equipo y stakeholders clave',
+    'Gestión del alcance, cronograma y costos de forma integrada'
+  ]},
+  { num:'05', name:'Project Work', pct:'Operacional', weight:70, items:[
+    'Coordinación del trabajo del equipo en el día a día',
+    'Gestión de impedimentos y facilitar el progreso',
+    'Comunicaciones efectivas: información correcta, persona correcta, momento correcto',
+    'Gestión de proveedores y contratos en proyectos complejos',
+    'Mantenimiento del equipo: motivación y ambiente de trabajo productivo'
+  ]},
+  { num:'06', name:'Delivery', pct:'Entrega de Valor', weight:85, items:[
+    'Enfoque en entregar valor real al cliente, no solo cumplir requerimientos',
+    'Gestión de calidad integrada en todos los procesos de entrega',
+    'Criterios de aceptación y validación con los stakeholders',
+    'Gestión del alcance para evitar scope creep sin bloquear valor',
+    'Integración continua y entrega frecuente en entornos ágiles'
+  ]},
+  { num:'07', name:'Measurement', pct:'Data-Driven', weight:65, items:[
+    'KPIs y métricas de proyecto: qué medir y por qué importa',
+    'Earned Value Management (EVM): SPI, CPI, EAC y su interpretación',
+    'Métricas ágiles: velocidad, burndown, cycle time, throughput',
+    'Dashboard de proyecto: visualización de estado y tendencias',
+    'Toma de decisiones basada en datos, no solo en intuición'
+  ]},
+  { num:'08', name:'Uncertainty', pct:'Gestión de Riesgos', weight:75, items:[
+    'Identificación proactiva de riesgos en entornos inciertos y complejos',
+    'Análisis cualitativo y cuantitativo de riesgos',
+    'Estrategias de respuesta: evitar, transferir, mitigar, aceptar',
+    'Gestión de oportunidades: no solo amenazas',
+    'Ambigüedad e incertidumbre: cómo navegar lo desconocido',
+    'Resiliencia del equipo y del proyecto ante eventos inesperados'
+  ]},
+];
+
+function renderDomains() {
+  const el = document.getElementById('domainsList');
+  if (el.children.length > 0) return;
+  domains.forEach((d, i) => {
+    const div = document.createElement('div');
+    div.className = 'domain-item';
+    div.innerHTML = `
+      <div class="domain-header" onclick="toggleDomain(this)">
+        <div class="domain-num">${d.num}</div>
+        <div class="domain-info">
+          <div class="domain-name">${d.name}</div>
+          <div class="domain-pct">${d.pct}</div>
+        </div>
+        <div class="domain-arrow">▾</div>
+      </div>
+      <div class="domain-body">
+        <ul>${d.items.map(it => `<li>${it}</li>`).join('')}</ul>
+      </div>
+      <div class="domain-weight-bar" style="width:${d.weight}%"></div>
+    `;
+    el.appendChild(div);
+  });
+}
+
+function toggleDomain(header) {
+  const item = header.parentElement;
+  item.classList.toggle('open');
+}
+
+// ── FLASHCARDS DATA ──────────────────────────────────
+const cards = [
+  { term:'Value Delivery System', def:'Marco del PMBOK 7 que describe cómo las organizaciones crean, entregan y mantienen valor a través de portafolios, programas y proyectos alineados con la estrategia.' },
+  { term:'Project Performance Domains', def:'Los 8 dominios del PMBOK 7 que representan áreas críticas del trabajo del proyecto: Stakeholders, Team, Development Approach, Planning, Project Work, Delivery, Measurement y Uncertainty.' },
+  { term:'Predictive Life Cycle', def:'Enfoque donde el alcance, tiempo y costo se determinan al inicio. Apropiado cuando los requisitos son estables, el riesgo es bajo y el cliente no cambia de opinión frecuentemente.' },
+  { term:'Adaptive Life Cycle', def:'Enfoque ágil/iterativo donde el alcance se define y refina en cada iteración. Ideal para proyectos con alta incertidumbre, requisitos cambiantes o cuando se puede entregar valor incremental.' },
+  { term:'Hybrid Life Cycle', def:'Combina prácticas predictivas y adaptativas. Por ejemplo: planificación de alto nivel predictiva con ejecución ágil por sprints.' },
+  { term:'Sprint / Iteración', def:'Ciclo corto de trabajo (1-4 semanas) en Scrum durante el cual el equipo produce un incremento potencialmente entregable del producto.' },
+  { term:'Definition of Done (DoD)', def:'Criterios acordados que deben cumplirse para considerar un elemento del backlog como completo. Asegura calidad consistente en cada entregable.' },
+  { term:'Earned Value (EV)', def:'Valor del trabajo completado expresado en términos del presupuesto aprobado. Base de las métricas EVM: SPI = EV/PV y CPI = EV/AC.' },
+  { term:'Servant Leadership', def:'Estilo de liderazgo donde el PM sirve al equipo: elimina obstáculos, facilita su trabajo, apoya su desarrollo y crea las condiciones para que sean efectivos.' },
+  { term:'Risk Appetite', def:'El nivel de riesgo que una organización está dispuesta a aceptar en la búsqueda de sus objetivos. Define el umbral para escalar y responder ante riesgos identificados.' },
+  { term:'Stakeholder Register', def:'Documento que identifica a los stakeholders, su influencia, intereses, expectativas y estrategia de involucramiento. Es un documento vivo que se actualiza continuamente.' },
+  { term:'Psychological Safety', def:'Condición donde los miembros del equipo se sienten seguros para tomar riesgos interpersonales, compartir ideas, reconocer errores y preguntar sin temor al castigo. Base de equipos de alto desempeño.' },
+];
+
+let fcIdx = 0;
+
+function renderFlash() {
+  showCard();
+}
+
+function showCard() {
+  const c = cards[fcIdx];
+  document.getElementById('fcTerm').textContent = c.term;
+  document.getElementById('fcDef').textContent = c.def;
+  document.getElementById('fcCounter').textContent = `${fcIdx + 1} / ${cards.length}`;
+  const fc = document.getElementById('flashcard');
+  fc.classList.remove('flipped');
+}
+
+function flipCard() { document.getElementById('flashcard').classList.toggle('flipped'); }
+function nextCard() { fcIdx = (fcIdx + 1) % cards.length; showCard(); }
+function prevCard() { fcIdx = (fcIdx - 1 + cards.length) % cards.length; showCard(); }
+
+// ── INIT ─────────────────────────────────────────────
+renderFlash();
+</script>
+</body>
+</html>
