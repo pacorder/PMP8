@@ -727,6 +727,177 @@
     .domain-header { padding: 1rem; }
     .udemy-banner { padding: 1.5rem; }
   }
+
+  /* ── NOVEDADES ───────────────────── */
+  .vs-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .vs-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 0.35rem;
+    text-align: center;
+  }
+  .vs-label.old { background: rgba(192,57,43,0.1); color: var(--red); }
+  .vs-label.new { background: rgba(26,107,107,0.1); color: var(--teal); }
+
+  .vs-divider {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--gold);
+    text-align: center;
+    background: var(--paper);
+    padding: 0.4rem 0.8rem;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto;
+  }
+
+  .change-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .change-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 0.9rem;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .change-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.07); }
+
+  .change-card-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem 1rem;
+  }
+
+  .change-icon {
+    font-size: 1.6rem;
+    width: 2.6rem;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .change-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    flex: 1;
+  }
+
+  .change-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.65rem;
+    border-radius: 1rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .change-badge.nuevo { background: rgba(26,107,107,0.12); color: var(--teal); }
+  .change-badge.expandido { background: rgba(201,168,76,0.15); color: #8a6a1a; }
+  .change-badge.eliminado { background: rgba(192,57,43,0.1); color: var(--red); }
+  .change-badge.redefinido { background: rgba(107,74,158,0.12); color: #6b4a9e; }
+
+  .change-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .change-col {
+    padding: 1rem 1.5rem 1.25rem;
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: var(--mid);
+  }
+  .change-col:first-child {
+    border-right: 1px solid var(--border);
+    background: rgba(192,57,43,0.02);
+  }
+  .change-col:last-child {
+    background: rgba(26,107,107,0.02);
+  }
+
+  .change-col-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .change-col:first-child .change-col-label { color: var(--red); }
+  .change-col:last-child .change-col-label { color: var(--teal); }
+
+  .impact-bar-wrap {
+    background: rgba(0,0,0,0.06);
+    border-radius: 1rem;
+    height: 5px;
+    margin-top: 0.6rem;
+    overflow: hidden;
+  }
+  .impact-bar {
+    height: 100%;
+    border-radius: 1rem;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .summary-stat {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--teal);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--mid);
+    line-height: 1.4;
+  }
+
+  @media (max-width: 600px) {
+    .change-body { grid-template-columns: 1fr; }
+    .change-col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    .vs-header { grid-template-columns: 1fr; }
+    .vs-divider { display: none; }
+    .summary-grid { grid-template-columns: 1fr 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -768,6 +939,7 @@
     <button class="nav-tab" onclick="switchSection('quiz', this)">🧠 Quiz</button>
     <button class="nav-tab" onclick="switchSection('domains', this)">📋 Dominios</button>
     <button class="nav-tab" onclick="switchSection('flash', this)">🃏 Flashcards</button>
+    <button class="nav-tab" onclick="switchSection('novedades', this)">🆕 PMBOK 8 vs 7</button>
     <button class="nav-tab" onclick="switchSection('curso', this)">🎓 Curso</button>
   </div>
 </div>
@@ -823,8 +995,8 @@
 
       <div class="tip-card" style="--tip-color:#1a6b6b">
         <div class="tip-icon">📊</div>
-        <h3>Entiende los principios, no los memorices</h3>
-        <p>El PMBOK 7 tiene 12 principios y 8 dominios de desempeño. Comprende su <em>propósito</em>, no los definas de memoria. El examen mide aplicación.</p>
+        <h3>Entiende los dominios, no los memorices</h3>
+        <p>El PMBOK 8 tiene 8 dominios de desempeño. Comprende el <em>propósito de cada uno</em> y cómo interactúan. El examen mide aplicación y juicio, no definiciones repetidas de memoria.</p>
         <span class="tip-tag">Estudio</span>
       </div>
 
@@ -843,13 +1015,12 @@
       </div>
     </div>
 
-    <!-- Udemy mini-banner -->
     <div class="udemy-banner" style="margin-top:2.5rem">
       <div class="udemy-icon">🎓</div>
       <div class="udemy-text">
         <span class="udemy-stars">★★★★★</span>
         <h3>¿Quieres una preparación completa y estructurada?</h3>
-        <p>Accede al curso con más de 200 preguntas de práctica, explicaciones detalladas, y contenido alineado 100% con el examen actual — no versiones obsoletas.</p>
+        <p>Accede al curso con más de 200 preguntas de práctica, explicaciones detalladas, y contenido alineado 100% con el examen actual — no versiones obsoletas como el PMBOK 5, 6 o 7.</p>
       </div>
       <a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252z" target="_blank" class="btn-primary" style="margin-top:0;flex-shrink:0">Ver Curso →</a>
     </div>
@@ -860,7 +1031,7 @@
 <section id="quiz" class="section">
   <div class="container">
     <h2 class="section-title">Quiz de Práctica</h2>
-    <p class="section-sub">Preguntas situacionales tipo examen PMP. Sin trampa — solo el nivel real.</p>
+    <p class="section-sub">Preguntas situacionales tipo examen PMP 2026. Sin trampa — solo el nivel real.</p>
 
     <div id="quiz-container">
       <div class="quiz-progress">
@@ -900,7 +1071,7 @@
 <section id="domains" class="section">
   <div class="container">
     <h2 class="section-title">8 Dominios del Examen</h2>
-    <p class="section-sub">El examen PMP actual evalúa estos dominios de desempeño. Conocerlos es tu mapa de estudio.</p>
+    <p class="section-sub">El examen PMP 2026 (PMBOK 8) evalúa estos dominios de desempeño. Conocerlos es tu mapa de estudio.</p>
 
     <div class="domains-list" id="domainsList"></div>
 
@@ -919,7 +1090,7 @@
 <section id="flash" class="section">
   <div class="container">
     <h2 class="section-title">Flashcards PMBOK 7</h2>
-    <p class="section-sub">Términos clave que debes dominar. Haz clic en la tarjeta para ver la definición.</p>
+    <p class="section-sub">Términos clave del PMBOK 8 que debes dominar. Haz clic en la tarjeta para ver la definición.</p>
 
     <div class="flash-wrap">
       <p class="fc-hint">👆 Clic para voltear · Navega con los botones</p>
@@ -957,29 +1128,32 @@
 <!-- ── CURSO ───────────────────────────────────────── -->
 <section id="curso" class="section">
   <div class="container" style="max-width:700px">
-    <h2 class="section-title">El Curso Correcto para el Examen Correcto</h2>
+    <h2 class="section-title">El Curso Correcto para el Examen 2026</h2>
     <p class="section-sub">
-      El examen PMP ha cambiado radicalmente. Prepararse con el PMBOK 5 o 6 es como estudiar para un examen de hace 5 años — el contenido, el formato y la mentalidad son completamente distintos.
+      El examen PMP ha cambiado radicalmente con el PMBOK 8. Prepararse con el PMBOK 5, 6 o incluso 7 es como estudiar para un examen que ya no existe — el contenido, el enfoque y la mentalidad son completamente distintos en la versión actual.
     </p>
 
     <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:1rem;padding:2rem;margin-bottom:1.5rem">
-      <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:1rem;color:var(--red)">❌ Lo que ya NO evalúa el examen PMP</h3>
+      <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:1rem;color:var(--red)">❌ Lo que ya NO evalúa el examen PMP 2026</h3>
       <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.6rem">
         <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">✗ Memorizar grupos de procesos del PMBOK 6 (Iniciación → Cierre)</li>
+        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">✗ Las 10 áreas de conocimiento del PMBOK 6 como estructura central</li>
+        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">✗ Los 12 principios del PMBOK 7 como eje principal (ya superado por el PMBOK 8)</li>
         <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">✗ Calcular EVA/EVM de forma aislada sin contexto decisional</li>
-        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">✗ Recitar definiciones exactas de áreas de conocimiento</li>
-        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">✗ Preguntas con una sola respuesta "técnica" correcta</li>
+        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">✗ Preguntas con una sola respuesta "técnica" correcta sin contexto situacional</li>
       </ul>
     </div>
 
     <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:1rem;padding:2rem;margin-bottom:2rem">
-      <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:1rem;color:var(--green)">✅ Lo que SÍ evalúa el examen actual</h3>
+      <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:1rem;color:var(--green)">✅ Lo que SÍ evalúa el examen PMP 2026 (PMBOK 8)</h3>
       <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.6rem">
         <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">→ Juicio situacional en entornos ágiles, predictivos e híbridos</li>
         <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">→ Liderazgo de equipos, resolución de conflictos y coaching</li>
         <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">→ Entrega de valor, gestión de beneficios y satisfacción del cliente</li>
-        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">→ Los 12 principios y 8 dominios del PMBOK 7</li>
-        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">→ Aplicación práctica de Scrum, Kanban y marcos ágiles</li>
+        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">→ Los 8 dominios de desempeño del PMBOK 8 y su aplicación práctica</li>
+        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">→ Integración de inteligencia artificial y herramientas digitales en la gestión de proyectos</li>
+        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">→ Sostenibilidad, ética y responsabilidad en la dirección de proyectos</li>
+        <li style="font-size:0.88rem;color:var(--mid);display:flex;gap:0.5rem">→ Aplicación práctica de Scrum, Kanban, SAFe y marcos híbridos</li>
       </ul>
     </div>
 
@@ -987,13 +1161,13 @@
       <div style="flex:1">
         <span class="udemy-stars">★★★★★</span>
         <h3 style="font-family:'Syne',sans-serif;font-weight:800;color:#fff;font-size:1.4rem;margin-bottom:0.75rem">
-          PMP Exam Prep Mastery<br><span style="color:var(--gold)">PMBOK 7th Edition</span>
+          PMP Exam Prep Mastery<br><span style="color:var(--gold)">PMBOK 8 · Examen 2026</span>
         </h3>
         <p style="color:rgba(255,255,255,0.6);font-size:0.88rem;line-height:1.7;margin-bottom:1.5rem">
-          El único curso que prepara para el examen <strong style="color:#fff">que existe hoy</strong>, no para el de hace 3 años. Preguntas situacionales reales, explicaciones profundas, y una metodología que construye comprensión — no memorización mecánica.
+          El único curso que prepara para el examen <strong style="color:#fff">que existe hoy</strong>, no para el de hace 3 o 5 años. El PMBOK 7 ya es historia — este curso está actualizado al PMBOK 8 con preguntas situacionales reales, explicaciones profundas y metodología que construye comprensión, no memorización mecánica.
         </p>
         <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem">
-          <span style="background:rgba(201,168,76,0.15);color:var(--gold);font-size:0.75rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:1rem;letter-spacing:0.05em">✓ PMBOK 7 completo</span>
+          <span style="background:rgba(201,168,76,0.15);color:var(--gold);font-size:0.75rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:1rem;letter-spacing:0.05em">✓ PMBOK 8 completo</span>
           <span style="background:rgba(201,168,76,0.15);color:var(--gold);font-size:0.75rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:1rem;letter-spacing:0.05em">✓ Enfoque ágil/híbrido</span>
           <span style="background:rgba(201,168,76,0.15);color:var(--gold);font-size:0.75rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:1rem;letter-spacing:0.05em">✓ 200+ preguntas prácticas</span>
           <span style="background:rgba(201,168,76,0.15);color:var(--gold);font-size:0.75rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:1rem;letter-spacing:0.05em">✓ Simulacros de examen</span>
@@ -1006,9 +1180,227 @@
   </div>
 </section>
 
+<!-- ── NOVEDADES PMBOK 8 vs 7 ─────────────────────── -->
+<section id="novedades" class="section">
+  <div class="container">
+    <h2 class="section-title">¿Qué cambia en el PMBOK 8?</h2>
+    <p class="section-sub">Si estudiaste con el PMBOK 7, esto es lo que debes actualizar. Si vienes del PMBOK 6 o antes, la diferencia es aún mayor — aquí te explicamos los cambios que realmente importan para el examen.</p>
+
+    <!-- Stats summary -->
+    <div class="summary-grid">
+      <div class="summary-stat">
+        <div class="stat-num">8</div>
+        <div class="stat-label">Dominios de desempeño (se mantienen del PMBOK 7)</div>
+      </div>
+      <div class="summary-stat">
+        <div class="stat-num" style="color:var(--red)">12→0</div>
+        <div class="stat-label">Principios del PMBOK 7 ya no son el eje central del examen</div>
+      </div>
+      <div class="summary-stat">
+        <div class="stat-num" style="color:var(--accent)">3</div>
+        <div class="stat-label">Grandes temas nuevos: IA, Sostenibilidad y Complejidad</div>
+      </div>
+      <div class="summary-stat">
+        <div class="stat-num" style="color:var(--gold)">∞</div>
+        <div class="stat-label">Énfasis en Tailoring contextual como competencia central</div>
+      </div>
+    </div>
+
+    <div class="vs-header">
+      <div class="vs-label old">PMBOK 7 — Superado</div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-label new">PMBOK 8 — Examen 2026</div>
+    </div>
+
+    <div class="change-cards">
+
+      <div class="change-card">
+        <div class="change-card-head">
+          <div class="change-icon">🏗️</div>
+          <div class="change-title">Estructura y marco conceptual</div>
+          <span class="change-badge redefinido">Redefinido</span>
+        </div>
+        <div class="change-body">
+          <div class="change-col">
+            <span class="change-col-label">PMBOK 7</span>
+            Organizado en torno a <strong>12 Principios</strong> como base filosófica y 8 Dominios de Desempeño como estructura operativa. El foco era describir "qué hace" un buen PM.
+          </div>
+          <div class="change-col">
+            <span class="change-col-label">PMBOK 8</span>
+            Los 8 dominios siguen siendo el esqueleto, pero el PMBOK 8 los integra dentro de un <strong>marco de entrega de valor orientado a resultados de negocio</strong>. Los principios dejan de ser el eje para dar paso a competencias aplicadas y decisiones contextuales.
+            <div class="impact-bar-wrap"><div class="impact-bar" style="width:95%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="change-card">
+        <div class="change-card-head">
+          <div class="change-icon">🤖</div>
+          <div class="change-title">Inteligencia Artificial en la Dirección de Proyectos</div>
+          <span class="change-badge nuevo">Nuevo</span>
+        </div>
+        <div class="change-body">
+          <div class="change-col">
+            <span class="change-col-label">PMBOK 7</span>
+            La IA no existía como tema. Las herramientas digitales se mencionaban superficialmente. El PM trabajaba con herramientas tradicionales de planificación y seguimiento.
+          </div>
+          <div class="change-col">
+            <span class="change-col-label">PMBOK 8</span>
+            El PMBOK 8 reconoce explícitamente la <strong>IA generativa, automatización y analítica de datos</strong> como herramientas del PM moderno. El examen evalúa cuándo y cómo incorporarlas sin perder el juicio humano.
+            <div class="impact-bar-wrap"><div class="impact-bar" style="width:90%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="change-card">
+        <div class="change-card-head">
+          <div class="change-icon">🌱</div>
+          <div class="change-title">Sostenibilidad y Responsabilidad Social</div>
+          <span class="change-badge nuevo">Nuevo</span>
+        </div>
+        <div class="change-body">
+          <div class="change-col">
+            <span class="change-col-label">PMBOK 7</span>
+            La sostenibilidad era mencionada dentro del dominio de Delivery de forma marginal. No existía como consideración sistemática en la planificación o entrega de proyectos.
+          </div>
+          <div class="change-col">
+            <span class="change-col-label">PMBOK 8</span>
+            La sostenibilidad es un <strong>criterio de calidad y éxito del proyecto</strong>. El PM debe considerar el impacto ambiental, social y ético de las decisiones. Aparece en múltiples dominios: Delivery, Planning y Uncertainty.
+            <div class="impact-bar-wrap"><div class="impact-bar" style="width:80%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="change-card">
+        <div class="change-card-head">
+          <div class="change-icon">🎛️</div>
+          <div class="change-title">Tailoring (Adaptación Contextual)</div>
+          <span class="change-badge expandido">Expandido</span>
+        </div>
+        <div class="change-body">
+          <div class="change-col">
+            <span class="change-col-label">PMBOK 7</span>
+            El tailoring aparecía como concepto, pero de forma genérica. Se mencionaba que el PM debía "adaptar" el enfoque sin profundizar en cómo ni cuándo hacerlo en situaciones concretas.
+          </div>
+          <div class="change-col">
+            <span class="change-col-label">PMBOK 8</span>
+            El tailoring es una <strong>competencia central evaluada en el examen</strong>. El PMBOK 8 provee un modelo estructurado de 4 pasos para adaptar deliberadamente herramientas, ciclos de vida y prácticas al contexto específico de cada proyecto.
+            <div class="impact-bar-wrap"><div class="impact-bar" style="width:92%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="change-card">
+        <div class="change-card-head">
+          <div class="change-icon">📈</div>
+          <div class="change-title">Benefits Realization Management</div>
+          <span class="change-badge expandido">Expandido</span>
+        </div>
+        <div class="change-body">
+          <div class="change-col">
+            <span class="change-col-label">PMBOK 7</span>
+            La realización de beneficios estaba implícita en el dominio de Delivery. El cierre del proyecto marcaba el fin de la responsabilidad del PM sobre los resultados de negocio.
+          </div>
+          <div class="change-col">
+            <span class="change-col-label">PMBOK 8</span>
+            El PM es <strong>corresponsable de que los beneficios prometidos se materialicen</strong>, incluso después del cierre. Se introduce un ciclo explícito de identificación, planificación, entrega y sostenimiento de beneficios integrado a lo largo de todo el proyecto.
+            <div class="impact-bar-wrap"><div class="impact-bar" style="width:85%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="change-card">
+        <div class="change-card-head">
+          <div class="change-icon">🌀</div>
+          <div class="change-title">Complejidad y Entornos VUCA/BANI</div>
+          <span class="change-badge nuevo">Nuevo</span>
+        </div>
+        <div class="change-body">
+          <div class="change-col">
+            <span class="change-col-label">PMBOK 7</span>
+            La incertidumbre se abordaba principalmente como gestión de riesgos identificables. El entorno era complejo pero manejable con las herramientas existentes.
+          </div>
+          <div class="change-col">
+            <span class="change-col-label">PMBOK 8</span>
+            El PMBOK 8 incorpora <strong>modelos de complejidad (VUCA, BANI)</strong> como contexto real de los proyectos. Distingue entre complicado (solucionable con experiencia) y complejo (emergente, impredecible). El PM necesita resiliencia adaptativa, no solo planes de contingencia.
+            <div class="impact-bar-wrap"><div class="impact-bar" style="width:88%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="change-card">
+        <div class="change-card-head">
+          <div class="change-icon">🤝</div>
+          <div class="change-title">Liderazgo y Equipo</div>
+          <span class="change-badge expandido">Expandido</span>
+        </div>
+        <div class="change-body">
+          <div class="change-col">
+            <span class="change-col-label">PMBOK 7</span>
+            El dominio Team ya incluía servant leadership, seguridad psicológica y desarrollo del equipo. Era uno de los dominios más desarrollados del PMBOK 7.
+          </div>
+          <div class="change-col">
+            <span class="change-col-label">PMBOK 8</span>
+            Se profundiza en <strong>equipos distribuidos globalmente, liderazgo multigeneracional y gestión del bienestar del equipo</strong> como factores de rendimiento. Se añade la dimensión de liderar equipos que trabajan con herramientas de IA y automatización.
+            <div class="impact-bar-wrap"><div class="impact-bar" style="width:75%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="change-card">
+        <div class="change-card-head">
+          <div class="change-icon">📊</div>
+          <div class="change-title">Medición y OKRs de Negocio</div>
+          <span class="change-badge expandido">Expandido</span>
+        </div>
+        <div class="change-body">
+          <div class="change-col">
+            <span class="change-col-label">PMBOK 7</span>
+            El dominio Measurement se centraba en métricas de proyecto (EVM, velocidad ágil) y dashboards. Las métricas de negocio eran responsabilidad del sponsor, no del PM.
+          </div>
+          <div class="change-col">
+            <span class="change-col-label">PMBOK 8</span>
+            El PM debe conectar las <strong>métricas del proyecto con los OKRs y KPIs de negocio</strong>. El examen evalúa si el candidato entiende que un proyecto "en verde" que no genera valor al negocio es un fracaso.
+            <div class="impact-bar-wrap"><div class="impact-bar" style="width:82%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="change-card">
+        <div class="change-card-head">
+          <div class="change-icon">🗑️</div>
+          <div class="change-title">Lo que desaparece del PMBOK 7</div>
+          <span class="change-badge eliminado">Eliminado / Minimizado</span>
+        </div>
+        <div class="change-body">
+          <div class="change-col">
+            <span class="change-col-label">PMBOK 7 — Ya no es relevante</span>
+            Los <strong>12 Principios como estructura de estudio</strong> ya no son el eje del examen. Memorizar "Ser un administrador diligente, respetuoso y cuidadoso" ya no te da ventaja en el examen actual.
+          </div>
+          <div class="change-col">
+            <span class="change-col-label">PMBOK 8 — El nuevo enfoque</span>
+            El examen evalúa <strong>aplicación, juicio y decisión</strong> en escenarios reales. Lo que importa no es qué principio defines, sino qué harías tú como PM experimentado en ese contexto específico.
+            <div class="impact-bar-wrap"><div class="impact-bar" style="width:100%"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="udemy-banner">
+      <div class="udemy-icon">🚀</div>
+      <div class="udemy-text">
+        <h3>Domina todos estos cambios en el curso</h3>
+        <p>El curso está completamente actualizado al PMBOK 8 — no encontrarás referencias al PMBOK 7 como guía de estudio. Cada cambio que acabas de leer está cubierto con ejemplos prácticos y preguntas de examen.</p>
+      </div>
+      <a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252z" target="_blank" class="btn-primary" style="flex-shrink:0">Ver Curso →</a>
+    </div>
+  </div>
+</section>
+
 <!-- ── FOOTER ─────────────────────────────────────── -->
 <footer>
-  <p>PMP Exam Prep · Basado en PMBOK 7ª Edición · <a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252z" target="_blank">Ver Curso en Udemy →</a></p>
+  <p>PMP 2026 Exam Prep · Basado en PMBOK 8ª Edición · <a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252z" target="_blank">Ver Curso en Udemy →</a></p>
 </footer>
 
 <script>
@@ -1183,62 +1575,65 @@ function restartQuiz() { initQuiz(); }
 
 // ── DOMAINS DATA ─────────────────────────────────────
 const domains = [
-  { num:'01', name:'Stakeholders', pct:'Impacto Clave', weight: 85, items:[
-    'Identificar y analizar expectativas e intereses de todos los stakeholders',
-    'Involucramiento proactivo y estratégico durante todo el proyecto',
-    'Gestión de expectativas: comunicación transparente y oportuna',
-    'Resolución de conflictos entre intereses de diferentes stakeholders',
-    'Construcción y mantenimiento de relaciones colaborativas'
+  { num:'01', name:'Stakeholders', pct:'Involucramiento & Valor', weight: 85, items:[
+    'Identificar a todos los stakeholders desde el inicio — incluyendo los no obvios y los negativos',
+    'Analizar poder, interés, influencia e impacto para priorizar estrategias de involucramiento',
+    'Gestión del Stakeholder Engagement Continuum: de Desconocedor a Líder activo',
+    'Comunicación bidireccional: no solo informar, sino escuchar y adaptar',
+    'El PMBOK 8 enfatiza el co-diseño con stakeholders para asegurar adopción y valor real'
   ]},
-  { num:'02', name:'Team', pct:'Énfasis Central', weight:90, items:[
-    'Liderazgo de equipos de alto desempeño en entornos complejos',
-    'Coaching, mentoring y desarrollo de capacidades del equipo',
-    'Cultura de equipo: confianza, seguridad psicológica e inclusión',
-    'Gestión de conflictos dentro del equipo de manera constructiva',
-    'Equipos distribuidos y virtuales: desafíos y mejores prácticas'
+  { num:'02', name:'Team', pct:'Liderazgo & Alto Desempeño', weight:90, items:[
+    'Servant Leadership como modelo central: el PM habilita, no controla',
+    'Construcción de seguridad psicológica como base de equipos efectivos',
+    'Coaching, mentoring y desarrollo de líderes dentro del equipo',
+    'Gestión de conflictos: el PMBOK 8 los ve como oportunidades de crecimiento',
+    'Diversidad, equidad e inclusión como ventajas competitivas del equipo',
+    'Equipos distribuidos y virtuales: herramientas, rituales y cohesión remota'
   ]},
-  { num:'03', name:'Development Approach & Life Cycle', pct:'Estratégico', weight:75, items:[
-    'Selección del ciclo de vida correcto: predictivo, iterativo, ágil o híbrido',
-    'Criterios para elegir el enfoque según contexto y características del proyecto',
-    'Marcos ágiles: Scrum, Kanban, SAFe — cuándo y cómo aplicarlos',
-    'Hibridación: combinando prácticas predictivas con ágiles efectivamente',
-    'Cadencia de entrega y definición de iteraciones o fases'
+  { num:'03', name:'Development Approach & Life Cycle', pct:'Tailoring Estratégico', weight:75, items:[
+    'El PMBOK 8 formaliza el Tailoring como competencia central del PM',
+    'Selección del ciclo de vida según: incertidumbre, tipo de entregable, cultura organizacional',
+    'Ciclo predictivo, iterativo, incremental, ágil e híbrido — y sus combinaciones',
+    'Marcos ágiles actuales: Scrum, Kanban, SAFe 6.0, LeSS — aplicación contextual',
+    'Decisión de hibridación: qué combinar, cuándo y por qué'
   ]},
-  { num:'04', name:'Planning', pct:'Fundamental', weight:80, items:[
-    'Planificación adaptativa vs. predictiva: cuándo ser más o menos detallado',
-    'Rolling wave planning: planificar progresivamente a medida que se conoce más',
-    'Alineación del plan con la estrategia y objetivos del negocio',
-    'Estimación colaborativa con el equipo y stakeholders clave',
-    'Gestión del alcance, cronograma y costos de forma integrada'
+  { num:'04', name:'Planning', pct:'Planificación Adaptativa', weight:80, items:[
+    'Planificación progresiva (rolling wave) como práctica estándar, no excepción',
+    'Integración de planes: alcance, cronograma, costo, calidad, riesgos, comunicaciones',
+    'El plan sirve al proyecto — si el contexto cambia, el plan debe cambiar',
+    'Estimación colaborativa: técnicas del PMBOK 8 para entornos inciertos',
+    'Alineación permanente del plan con los beneficios de negocio esperados'
   ]},
-  { num:'05', name:'Project Work', pct:'Operacional', weight:70, items:[
-    'Coordinación del trabajo del equipo en el día a día',
-    'Gestión de impedimentos y facilitar el progreso',
-    'Comunicaciones efectivas: información correcta, persona correcta, momento correcto',
-    'Gestión de proveedores y contratos en proyectos complejos',
-    'Mantenimiento del equipo: motivación y ambiente de trabajo productivo'
+  { num:'05', name:'Project Work', pct:'Ejecución & Coordinación', weight:70, items:[
+    'Gestión del trabajo diario: coordinación, comunicación y resolución de impedimentos',
+    'El PM como facilitador del flujo de trabajo, no como supervisor',
+    'Gestión de adquisiciones y contratos bajo principios de valor y colaboración',
+    'Integración de herramientas digitales e IA en la ejecución del proyecto',
+    'Mantenimiento del ambiente de trabajo: motivación, energía y sostenibilidad del equipo'
   ]},
-  { num:'06', name:'Delivery', pct:'Entrega de Valor', weight:85, items:[
-    'Enfoque en entregar valor real al cliente, no solo cumplir requerimientos',
-    'Gestión de calidad integrada en todos los procesos de entrega',
-    'Criterios de aceptación y validación con los stakeholders',
-    'Gestión del alcance para evitar scope creep sin bloquear valor',
-    'Integración continua y entrega frecuente en entornos ágiles'
+  { num:'06', name:'Delivery', pct:'Valor & Calidad', weight:85, items:[
+    'Entrega de valor real: el PMBOK 8 distingue entre "entregable" y "beneficio realizado"',
+    'Calidad integrada desde el diseño, no como revisión al final',
+    'Definition of Done alineada con las expectativas reales del cliente',
+    'Gestión del alcance para maximizar valor — el scope creep no siempre es negativo',
+    'Benefits Realization: asegurar que el valor prometido efectivamente se materialice',
+    'Sostenibilidad de los entregables: consideraciones éticas y ambientales (nuevo en PMBOK 8)'
   ]},
-  { num:'07', name:'Measurement', pct:'Data-Driven', weight:65, items:[
-    'KPIs y métricas de proyecto: qué medir y por qué importa',
-    'Earned Value Management (EVM): SPI, CPI, EAC y su interpretación',
-    'Métricas ágiles: velocidad, burndown, cycle time, throughput',
-    'Dashboard de proyecto: visualización de estado y tendencias',
-    'Toma de decisiones basada en datos, no solo en intuición'
+  { num:'07', name:'Measurement', pct:'Decisiones Basadas en Datos', weight:65, items:[
+    'Métricas orientadas a valor, no solo a cronograma y costo',
+    'EVM contextualizado: SPI, CPI, EAC como inputs de decisión, no solo reportes',
+    'OKRs y KPIs de negocio integrados con métricas de proyecto',
+    'Métricas ágiles: velocidad, cycle time, lead time, throughput, cumulative flow',
+    'Dashboards en tiempo real: el PMBOK 8 reconoce herramientas digitales de reporting',
+    'Interpretación de tendencias para anticipar problemas antes de que ocurran'
   ]},
-  { num:'08', name:'Uncertainty', pct:'Gestión de Riesgos', weight:75, items:[
-    'Identificación proactiva de riesgos en entornos inciertos y complejos',
-    'Análisis cualitativo y cuantitativo de riesgos',
-    'Estrategias de respuesta: evitar, transferir, mitigar, aceptar',
-    'Gestión de oportunidades: no solo amenazas',
-    'Ambigüedad e incertidumbre: cómo navegar lo desconocido',
-    'Resiliencia del equipo y del proyecto ante eventos inesperados'
+  { num:'08', name:'Uncertainty', pct:'Riesgo & Resiliencia', weight:75, items:[
+    'El PMBOK 8 expande incertidumbre más allá del riesgo: incluye ambigüedad y complejidad',
+    'Análisis cualitativo y cuantitativo de riesgos con herramientas modernas',
+    'Gestión de oportunidades con el mismo rigor que las amenazas',
+    'Resiliencia organizacional: capacidad de adaptarse, no solo de mitigar',
+    'Volatilidad del entorno (VUCA/BANI): cómo navegar proyectos en contextos disruptivos',
+    'Riesgos emergentes: IA, ciberseguridad, cambio climático en el registro de riesgos'
   ]},
 ];
 
@@ -1273,18 +1668,20 @@ function toggleDomain(header) {
 
 // ── FLASHCARDS DATA ──────────────────────────────────
 const cards = [
-  { term:'Value Delivery System', def:'Marco del PMBOK 7 que describe cómo las organizaciones crean, entregan y mantienen valor a través de portafolios, programas y proyectos alineados con la estrategia.' },
-  { term:'Project Performance Domains', def:'Los 8 dominios del PMBOK 7 que representan áreas críticas del trabajo del proyecto: Stakeholders, Team, Development Approach, Planning, Project Work, Delivery, Measurement y Uncertainty.' },
-  { term:'Predictive Life Cycle', def:'Enfoque donde el alcance, tiempo y costo se determinan al inicio. Apropiado cuando los requisitos son estables, el riesgo es bajo y el cliente no cambia de opinión frecuentemente.' },
-  { term:'Adaptive Life Cycle', def:'Enfoque ágil/iterativo donde el alcance se define y refina en cada iteración. Ideal para proyectos con alta incertidumbre, requisitos cambiantes o cuando se puede entregar valor incremental.' },
-  { term:'Hybrid Life Cycle', def:'Combina prácticas predictivas y adaptativas. Por ejemplo: planificación de alto nivel predictiva con ejecución ágil por sprints.' },
-  { term:'Sprint / Iteración', def:'Ciclo corto de trabajo (1-4 semanas) en Scrum durante el cual el equipo produce un incremento potencialmente entregable del producto.' },
-  { term:'Definition of Done (DoD)', def:'Criterios acordados que deben cumplirse para considerar un elemento del backlog como completo. Asegura calidad consistente en cada entregable.' },
-  { term:'Earned Value (EV)', def:'Valor del trabajo completado expresado en términos del presupuesto aprobado. Base de las métricas EVM: SPI = EV/PV y CPI = EV/AC.' },
-  { term:'Servant Leadership', def:'Estilo de liderazgo donde el PM sirve al equipo: elimina obstáculos, facilita su trabajo, apoya su desarrollo y crea las condiciones para que sean efectivos.' },
-  { term:'Risk Appetite', def:'El nivel de riesgo que una organización está dispuesta a aceptar en la búsqueda de sus objetivos. Define el umbral para escalar y responder ante riesgos identificados.' },
-  { term:'Stakeholder Register', def:'Documento que identifica a los stakeholders, su influencia, intereses, expectativas y estrategia de involucramiento. Es un documento vivo que se actualiza continuamente.' },
-  { term:'Psychological Safety', def:'Condición donde los miembros del equipo se sienten seguros para tomar riesgos interpersonales, compartir ideas, reconocer errores y preguntar sin temor al castigo. Base de equipos de alto desempeño.' },
+  { term:'PMBOK 8ª Edición', def:'La guía más reciente del PMI (2024) que unifica dirección de proyectos, programas y portafolios bajo un marco orientado a resultados, valor y adaptabilidad. Reemplaza definitivamente al PMBOK 7 y versiones anteriores.' },
+  { term:'Project Performance Domains (PMBOK 8)', def:'Los 8 dominios que estructuran el examen PMP actual: Stakeholders, Team, Development Approach & Life Cycle, Planning, Project Work, Delivery, Measurement y Uncertainty. Evaluados desde una perspectiva de juicio situacional.' },
+  { term:'Value Delivery System', def:'Marco del PMBOK 8 que describe cómo las organizaciones crean y sostienen valor a través de portafolios, programas y proyectos. El foco no es seguir procesos, sino generar resultados de negocio medibles.' },
+  { term:'Tailoring (Adaptación)', def:'Principio central del PMBOK 8: no existe un enfoque único. El PM adapta deliberadamente métodos, herramientas y prácticas al contexto específico del proyecto, organización y stakeholders.' },
+  { term:'Predictive Life Cycle', def:'Ciclo de vida donde el alcance, cronograma y costo se definen con alta precisión al inicio. Apropiado en proyectos con requisitos estables, baja incertidumbre y entregables bien definidos.' },
+  { term:'Adaptive / Agile Life Cycle', def:'Ciclo de vida donde el alcance evoluciona iterativamente. Esencial cuando los requisitos son inciertos o cambiantes, el cliente necesita validar frecuentemente y se puede entregar valor de forma incremental.' },
+  { term:'Hybrid Life Cycle', def:'Combina intencionalmente prácticas predictivas y adaptativas. Ejemplo: fases de planificación y adquisiciones predictivas con ejecución por sprints ágiles. El PMBOK 8 promueve la hibridación como norma, no como excepción.' },
+  { term:'Earned Value (EV) en contexto', def:'El PMBOK 8 integra EVM con la narrativa de valor: SPI = EV/PV (eficiencia de cronograma) y CPI = EV/AC (eficiencia de costo). Lo relevante no es el cálculo, sino la decisión que toma el PM ante los resultados.' },
+  { term:'Servant Leadership', def:'Modelo de liderazgo central en el PMBOK 8: el PM lidera sirviendo al equipo — elimina impedimentos, crea condiciones de éxito, facilita autonomía y fomenta el crecimiento profesional de cada miembro.' },
+  { term:'Risk Appetite vs. Risk Threshold', def:'Risk Appetite: cuánto riesgo tolera la organización en general. Risk Threshold: el punto específico donde el riesgo se vuelve inaceptable y debe escalarse. El PMBOK 8 distingue ambos para una gestión de riesgos más precisa.' },
+  { term:'Psychological Safety', def:'Condición donde los miembros del equipo se sienten seguros para compartir ideas, señalar errores y tomar riesgos interpersonales sin temor. El PMBOK 8 lo reconoce como fundamento de equipos de alto desempeño.' },
+  { term:'Benefits Realization Management', def:'Proceso del PMBOK 8 para asegurar que los beneficios de negocio prometidos por el proyecto realmente se materialicen. El PM no termina su responsabilidad con la entrega — debe asegurar que el valor se realice.' },
+  { term:'Stakeholder Engagement Continuum', def:'Modelo del PMBOK 8 que va desde el stakeholder Desconocedor hasta el Líder activo del proyecto. El PM debe llevar estratégicamente a cada stakeholder hacia el nivel de involucramiento que el proyecto necesita.' },
+  { term:'AI & Digital Tools en PM (PMBOK 8)', def:'El PMBOK 8 reconoce explícitamente el rol de la inteligencia artificial, automatización y herramientas digitales en la dirección de proyectos. El PM moderno debe saber cuándo y cómo incorporarlas.' },
 ];
 
 let fcIdx = 0;
