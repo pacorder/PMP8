@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acerca de | PMP2026 · Preparación Examen PMP PMBOK 8</title>
+<meta name="description" content="Conoce quién está detrás de PMP2026.com, un recurso gratuito de preparación para el examen PMP basado en el PMBOK 8ª Edición.">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0f;
+    --paper: #f5f2ec;
+    --gold: #c9a84c;
+    --gold-light: #e8d08a;
+    --teal: #1a6b6b;
+    --teal-light: #2a9090;
+    --red: #c0392b;
+    --green: #1a7a4a;
+    --accent: #e85d2f;
+    --mid: #6b6b7a;
+    --card-bg: #ffffff;
+    --border: rgba(10,10,15,0.1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); }
+
+  /* ── SITE HEADER ─────── */
+  .site-header {
+    background: var(--ink);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    padding: 0 1.5rem;
+    position: sticky; top: 0; z-index: 200;
+  }
+  .site-header-inner {
+    max-width: 1000px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 52px; gap: 1rem;
+  }
+  .site-logo {
+    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem;
+    color: #fff; text-decoration: none; letter-spacing: -0.01em; white-space: nowrap;
+  }
+  .site-logo span { color: var(--gold); }
+  .site-nav { display: flex; align-items: center; gap: 0.25rem; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .site-nav::-webkit-scrollbar { display: none; }
+  .site-nav a {
+    font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5); text-decoration: none;
+    padding: 0.35rem 0.75rem; border-radius: 0.3rem; transition: all 0.2s; white-space: nowrap;
+  }
+  .site-nav a:hover { color: #fff; background: rgba(255,255,255,0.07); }
+  .site-nav a.active { color: var(--gold); }
+
+  /* ── PAGE HERO ─────── */
+  .page-hero {
+    background: var(--ink);
+    padding: 4rem 1.5rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 70%);
+  }
+  .page-hero-badge {
+    display: inline-block;
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 2rem;
+    margin-bottom: 1.5rem; position: relative;
+  }
+  .page-hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800; color: #fff; line-height: 1.1;
+    letter-spacing: -0.02em; position: relative;
+  }
+  .page-hero h1 span { color: var(--gold); }
+  .page-hero p {
+    color: rgba(255,255,255,0.5); font-size: 1rem; font-weight: 300;
+    margin-top: 1rem; max-width: 520px; margin-left: auto; margin-right: auto;
+    line-height: 1.7; position: relative;
+  }
+
+  /* ── CONTENT ─────────── */
+  .container { max-width: 820px; margin: 0 auto; padding: 3.5rem 1.5rem; }
+
+  .section-title {
+    font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800;
+    letter-spacing: -0.01em; margin-bottom: 1rem;
+  }
+
+  .prose {
+    font-size: 0.97rem; line-height: 1.8; color: #3a3a4a;
+    margin-bottom: 1.5rem;
+  }
+  .prose strong { color: var(--ink); font-weight: 600; }
+
+  .card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 1rem; padding: 2rem; margin-bottom: 1.5rem;
+  }
+
+  .card h2 {
+    font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 800;
+    margin-bottom: 0.75rem;
+  }
+
+  .divider {
+    border: none; border-top: 1px solid var(--border); margin: 2.5rem 0;
+  }
+
+  .profile-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 1rem; padding: 2rem;
+    display: flex; gap: 1.75rem; align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+
+  .profile-avatar {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--gold) 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; flex-shrink: 0;
+  }
+
+  .profile-info { flex: 1; }
+  .profile-info h3 {
+    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+  .profile-info .profile-title {
+    font-size: 0.82rem; color: var(--teal); font-weight: 600;
+    letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.75rem;
+  }
+  .profile-info p { font-size: 0.88rem; color: var(--mid); line-height: 1.65; }
+
+  .tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+  .tag {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 1rem;
+    background: rgba(26,107,107,0.1); color: var(--teal);
+  }
+  .tag.gold { background: rgba(201,168,76,0.12); color: #8a6a1a; }
+
+  .mission-block {
+    background: linear-gradient(135deg, var(--ink) 0%, #1a1a2e 100%);
+    border-radius: 1rem; padding: 2.5rem; margin: 2rem 0;
+    position: relative; overflow: hidden;
+  }
+  .mission-block::before {
+    content: '"';
+    position: absolute; top: -0.5rem; left: 1.5rem;
+    font-family: 'Syne', sans-serif; font-size: 8rem; font-weight: 800;
+    color: rgba(201,168,76,0.1); line-height: 1;
+  }
+  .mission-block p {
+    font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 600;
+    color: #fff; line-height: 1.6; position: relative;
+  }
+  .mission-block p span { color: var(--gold); }
+
+  .stats-row {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; margin: 2rem 0;
+  }
+  .stat-box {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 0.75rem; padding: 1.25rem; text-align: center;
+  }
+  .stat-box .num {
+    font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800;
+    color: var(--teal); line-height: 1;
+  }
+  .stat-box .lbl { font-size: 0.78rem; color: var(--mid); margin-top: 0.4rem; line-height: 1.4; }
+
+  .cta-banner {
+    background: linear-gradient(135deg, var(--ink) 0%, #1a1a2e 100%);
+    border-radius: 1rem; padding: 2rem 2.5rem;
+    display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+  }
+  .cta-banner div { flex: 1; min-width: 200px; }
+  .cta-banner h3 {
+    font-family: 'Syne', sans-serif; font-weight: 800; color: #fff;
+    font-size: 1.1rem; margin-bottom: 0.4rem;
+  }
+  .cta-banner p { color: rgba(255,255,255,0.55); font-size: 0.85rem; line-height: 1.55; }
+  .btn-primary {
+    background: var(--gold); color: var(--ink);
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.88rem;
+    letter-spacing: 0.05em; padding: 0.8rem 1.8rem; border-radius: 0.4rem;
+    border: none; cursor: pointer; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    transition: all 0.2s; flex-shrink: 0;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  /* ── FOOTER ─────────── */
+  .site-footer { background: var(--ink); color: rgba(255,255,255,0.4); padding: 3rem 1.5rem 2rem; }
+  .footer-inner {
+    max-width: 1000px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    gap: 2.5rem; padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand .site-logo { display: block; margin-bottom: 0.75rem; font-size: 1.1rem; }
+  .footer-brand p { font-size: 0.82rem; line-height: 1.6; color: rgba(255,255,255,0.35); max-width: 280px; }
+  .footer-col h4 {
+    font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+  }
+  .footer-col ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-col ul li a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.83rem; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--gold); }
+  .footer-bottom {
+    max-width: 1000px; margin: 1.5rem auto 0;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 0.75rem;
+    font-size: 0.75rem; color: rgba(255,255,255,0.25);
+  }
+  .footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; }
+  .footer-bottom a:hover { color: var(--gold); }
+
+  @media (max-width: 640px) {
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .profile-card { flex-direction: column; gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SITE HEADER -->
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="site-logo">PMP<span>2026</span></a>
+    <nav class="site-nav">
+      <a href="index.html">🏠 Inicio</a>
+      <a href="acerca.html" class="active">👤 Acerca</a>
+      <a href="contacto.html">✉️ Contacto</a>
+      <a href="privacidad.html">🔒 Privacidad</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-badge">Sobre este sitio</div>
+  <h1>Acerca de <span>PMP2026</span></h1>
+  <p>La historia detrás del recurso gratuito de preparación PMP más actualizado en español.</p>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <div class="mission-block">
+    <p>Demasiados candidatos llegan al examen PMP preparados con material obsoleto —<span> y lo reprueban</span>. Este sitio existe para que eso no te pase a ti.</p>
+  </div>
+
+  <h2 class="section-title">¿Qué es PMP2026?</h2>
+  <p class="prose">
+    PMP2026 es un recurso educativo gratuito diseñado específicamente para candidatos que se preparan para el examen de certificación Project Management Professional (PMP) bajo el marco actual del <strong>PMBOK 8ª Edición</strong>.
+  </p>
+  <p class="prose">
+    El examen PMP ha evolucionado significativamente. El formato actual evalúa <strong>juicio situacional, liderazgo adaptativo y entrega de valor</strong> — no la memorización de procesos y fórmulas que caracterizaba versiones anteriores del examen. Este sitio fue creado precisamente para cerrar esa brecha: ofrecerte herramientas de práctica alineadas con el examen que existe hoy, no con el de hace cinco años.
+  </p>
+
+  <hr class="divider">
+
+  <h2 class="section-title">Quién está detrás</h2>
+
+  <div class="profile-card">
+    <div class="profile-avatar">🧑‍💼</div>
+    <div class="profile-info">
+      <h3>Instructor PMP Certificado</h3>
+      <div class="profile-title">Project Management Professional · PMI</div>
+      <p>
+        Profesional certificado PMP con más de 10 años de experiencia en dirección de proyectos en entornos ágiles, híbridos y predictivos. Ha liderado equipos multidisciplinarios en proyectos de transformación digital, desarrollo de software y consultoría organizacional en América Latina.
+      </p>
+      <p style="margin-top:0.75rem">
+        Como instructor en plataformas de educación online, ha ayudado a cientos de candidatos a obtener su certificación PMP con material actualizado y metodología centrada en la comprensión real, no en la memorización mecánica.
+      </p>
+      <div class="tag-row">
+        <span class="tag">PMP Certificado</span>
+        <span class="tag">PMI Member</span>
+        <span class="tag gold">PMBOK 8 Specialist</span>
+        <span class="tag">Agile Practitioner</span>
+        <span class="tag">Instructor Udemy</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <h2 class="section-title">Nuestra misión</h2>
+  <p class="prose">
+    El objetivo de este sitio es simple: <strong>que llegues al examen PMP preparado con el material correcto</strong>. Eso significa herramientas alineadas al PMBOK 8, preguntas situacionales del nivel real del examen, y contenido que te enseña a pensar como un Project Manager, no solo a responder trivia.
+  </p>
+
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="num">8</div>
+      <div class="lbl">Dominios de desempeño cubiertos</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">100%</div>
+      <div class="lbl">Gratuito para estudiar</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">2026</div>
+      <div class="lbl">Actualizado al examen vigente</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <h2 class="section-title">¿Por qué el PMBOK 8 importa?</h2>
+
+  <div class="card">
+    <h2>El problema con el material desactualizado</h2>
+    <p class="prose" style="margin-bottom:0">
+      Desde 2021, el examen PMP incorporó un giro radical hacia el juicio situacional y las metodologías ágiles. Con el PMBOK 8 (2024), este enfoque se profundiza aún más. Sin embargo, gran parte del material de preparación disponible en internet — y algunos cursos de pago — siguen enseñando el PMBOK 6 o el 7 sin actualizaciones.
+    </p>
+    <p class="prose" style="margin-bottom:0; margin-top:1rem">
+      Estudiar con material obsoleto no solo es ineficiente: <strong>puede costarte reprobar el examen</strong>. Las preguntas del examen actual no te piden que recites definiciones — te piden que tomes decisiones como un Project Manager experimentado en entornos complejos y cambiantes.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Lo que encontrarás en este sitio</h2>
+    <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.6rem">
+      <li style="font-size:0.9rem;color:var(--mid);display:flex;gap:0.5rem;align-items:flex-start">
+        <span style="color:var(--teal);font-weight:700;flex-shrink:0">→</span>
+        <span><strong style="color:var(--ink)">Quiz de práctica situacional</strong> — preguntas del nivel real del examen PMP 2026, con explicaciones detalladas de por qué cada opción es correcta o incorrecta.</span>
+      </li>
+      <li style="font-size:0.9rem;color:var(--mid);display:flex;gap:0.5rem;align-items:flex-start">
+        <span style="color:var(--teal);font-weight:700;flex-shrink:0">→</span>
+        <span><strong style="color:var(--ink)">Flashcards del PMBOK 8</strong> — los conceptos clave que el examen evalúa, explicados en lenguaje claro y aplicado.</span>
+      </li>
+      <li style="font-size:0.9rem;color:var(--mid);display:flex;gap:0.5rem;align-items:flex-start">
+        <span style="color:var(--teal);font-weight:700;flex-shrink:0">→</span>
+        <span><strong style="color:var(--ink)">Los 8 dominios de desempeño</strong> — con los puntos críticos que el examen mide en cada uno.</span>
+      </li>
+      <li style="font-size:0.9rem;color:var(--mid);display:flex;gap:0.5rem;align-items:flex-start">
+        <span style="color:var(--teal);font-weight:700;flex-shrink:0">→</span>
+        <span><strong style="color:var(--ink)">Comparativa PMBOK 8 vs 7</strong> — para entender exactamente qué cambió y qué debes actualizar en tu preparación.</span>
+      </li>
+      <li style="font-size:0.9rem;color:var(--mid);display:flex;gap:0.5rem;align-items:flex-start">
+        <span style="color:var(--teal);font-weight:700;flex-shrink:0">→</span>
+        <span><strong style="color:var(--ink)">Tips estratégicos</strong> — técnicas probadas para abordar preguntas difíciles, gestionar el tiempo y mantener el foco.</span>
+      </li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <div class="cta-banner">
+    <div>
+      <h3>¿Listo para empezar a practicar?</h3>
+      <p>Accede al quiz gratuito y mide tu nivel con preguntas reales del examen PMP 2026.</p>
+    </div>
+    <a href="index.html" class="btn-primary">Ir al inicio →</a>
+  </div>
+
+</div>
+
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="site-logo">PMP<span>2026</span></a>
+      <p>Preparación para el examen PMP basada en el PMBOK 8ª Edición. Recursos gratuitos para candidatos que quieren certificarse con el material actualizado al examen vigente.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Herramientas</h4>
+      <ul>
+        <li><a href="index.html">Quiz de Práctica</a></li>
+        <li><a href="index.html">Flashcards PMBOK 8</a></li>
+        <li><a href="index.html">8 Dominios</a></li>
+        <li><a href="index.html">PMBOK 8 vs 7</a></li>
+        <li><a href="index.html">Curso Completo</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Sitio</h4>
+      <ul>
+        <li><a href="acerca.html">Acerca de</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="privacidad.html">Política de Privacidad</a></li>
+        <li><a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252z" target="_blank">Curso en Udemy →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 PMP2026 · Todos los derechos reservados</span>
+    <span><a href="privacidad.html">Privacidad</a> · <a href="contacto.html">Contacto</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

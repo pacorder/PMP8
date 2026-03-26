@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad | PMP2026</title>
+<meta name="description" content="Política de privacidad de PMP2026. Información sobre cómo usamos cookies, Google AdSense y protegemos tus datos personales.">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0f; --paper: #f5f2ec; --gold: #c9a84c; --gold-light: #e8d08a;
+    --teal: #1a6b6b; --teal-light: #2a9090; --red: #c0392b; --green: #1a7a4a;
+    --accent: #e85d2f; --mid: #6b6b7a; --card-bg: #ffffff; --border: rgba(10,10,15,0.1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); }
+
+  /* SITE HEADER */
+  .site-header { background: var(--ink); border-bottom: 1px solid rgba(201,168,76,0.15); padding: 0 1.5rem; position: sticky; top: 0; z-index: 200; }
+  .site-header-inner { max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 52px; gap: 1rem; }
+  .site-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; color: #fff; text-decoration: none; letter-spacing: -0.01em; white-space: nowrap; }
+  .site-logo span { color: var(--gold); }
+  .site-nav { display: flex; align-items: center; gap: 0.25rem; overflow-x: auto; scrollbar-width: none; }
+  .site-nav::-webkit-scrollbar { display: none; }
+  .site-nav a { font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; padding: 0.35rem 0.75rem; border-radius: 0.3rem; transition: all 0.2s; white-space: nowrap; }
+  .site-nav a:hover { color: #fff; background: rgba(255,255,255,0.07); }
+  .site-nav a.active { color: var(--gold); }
+
+  /* PAGE HERO */
+  .page-hero { background: var(--ink); padding: 3.5rem 1.5rem 2.5rem; text-align: center; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 80% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%); }
+  .page-hero-badge { display: inline-block; border: 1px solid rgba(201,168,76,0.3); color: rgba(201,168,76,0.7); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 2rem; margin-bottom: 1.25rem; position: relative; }
+  .page-hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; color: #fff; line-height: 1.1; letter-spacing: -0.02em; position: relative; }
+  .page-hero p { color: rgba(255,255,255,0.45); font-size: 0.88rem; font-weight: 300; margin-top: 0.75rem; position: relative; }
+
+  /* CONTENT */
+  .container { max-width: 760px; margin: 0 auto; padding: 3.5rem 1.5rem 4rem; }
+
+  .toc {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 3rem;
+  }
+  .toc h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.75rem; }
+  .toc ol { padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.35rem; }
+  .toc ol li a { font-size: 0.85rem; color: var(--teal); text-decoration: none; }
+  .toc ol li a:hover { text-decoration: underline; }
+
+  .policy-section { margin-bottom: 2.5rem; }
+  .policy-section h2 { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 800; margin-bottom: 0.85rem; padding-top: 0.5rem; }
+  .policy-section h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-top: 1.25rem; margin-bottom: 0.6rem; color: var(--teal); }
+  .policy-section p { font-size: 0.9rem; line-height: 1.8; color: #3a3a4a; margin-bottom: 0.85rem; }
+  .policy-section p:last-child { margin-bottom: 0; }
+  .policy-section ul, .policy-section ol { padding-left: 1.5rem; margin-bottom: 0.85rem; }
+  .policy-section li { font-size: 0.9rem; line-height: 1.75; color: #3a3a4a; margin-bottom: 0.3rem; }
+  .policy-section a { color: var(--teal); text-decoration: none; }
+  .policy-section a:hover { text-decoration: underline; }
+
+  .info-box {
+    background: rgba(26,107,107,0.06); border: 1px solid rgba(26,107,107,0.2);
+    border-left: 4px solid var(--teal); border-radius: 0 0.5rem 0.5rem 0;
+    padding: 1rem 1.25rem; margin: 1.25rem 0;
+    font-size: 0.88rem; line-height: 1.65; color: #3a3a4a;
+  }
+
+  .date-badge {
+    display: inline-block; background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 0.35rem; padding: 0.6rem 1.1rem; font-size: 0.82rem;
+    color: var(--mid); margin-bottom: 2.5rem;
+  }
+  .date-badge strong { color: var(--ink); }
+
+  hr.section-divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+  /* FOOTER */
+  .site-footer { background: var(--ink); color: rgba(255,255,255,0.4); padding: 3rem 1.5rem 2rem; }
+  .footer-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer-brand .site-logo { display: block; margin-bottom: 0.75rem; font-size: 1.1rem; }
+  .footer-brand p { font-size: 0.82rem; line-height: 1.6; color: rgba(255,255,255,0.35); max-width: 280px; }
+  .footer-col h4 { font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .footer-col ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-col ul li a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.83rem; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--gold); }
+  .footer-bottom { max-width: 1000px; margin: 1.5rem auto 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+  .footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; }
+  .footer-bottom a:hover { color: var(--gold); }
+
+  @media (max-width: 640px) {
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="site-logo">PMP<span>2026</span></a>
+    <nav class="site-nav">
+      <a href="index.html">🏠 Inicio</a>
+      <a href="acerca.html">👤 Acerca</a>
+      <a href="contacto.html">✉️ Contacto</a>
+      <a href="privacidad.html" class="active">🔒 Privacidad</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-badge">Documento Legal</div>
+  <h1>Política de Privacidad</h1>
+  <p>Cómo recopilamos, usamos y protegemos tu información en este sitio.</p>
+</div>
+
+<div class="container">
+
+  <div class="date-badge">Última actualización: <strong>1 de enero de 2026</strong></div>
+
+  <div class="toc">
+    <h3>Contenido</h3>
+    <ol>
+      <li><a href="#introduccion">Introducción</a></li>
+      <li><a href="#informacion">Información que recopilamos</a></li>
+      <li><a href="#cookies">Cookies y tecnologías similares</a></li>
+      <li><a href="#adsense">Google AdSense y publicidad</a></li>
+      <li><a href="#analitica">Google Analytics</a></li>
+      <li><a href="#terceros">Servicios de terceros</a></li>
+      <li><a href="#derechos">Tus derechos</a></li>
+      <li><a href="#menores">Menores de edad</a></li>
+      <li><a href="#cambios">Cambios a esta política</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. Introducción -->
+  <div class="policy-section" id="introduccion">
+    <h2>1. Introducción</h2>
+    <p>
+      Bienvenido a <strong>PMP2026</strong> (en adelante, "el Sitio", "nosotros" o "nuestro"). Esta Política de Privacidad describe cómo recopilamos, usamos, divulgamos y protegemos la información de los usuarios que visitan nuestro sitio web, orientado a la preparación del examen de certificación Project Management Professional (PMP).
+    </p>
+    <p>
+      Al acceder y utilizar este Sitio, aceptas las prácticas descritas en esta política. Si no estás de acuerdo con alguno de los términos, te pedimos que no utilices el Sitio.
+    </p>
+    <div class="info-box">
+      Esta política cumple con el Reglamento General de Protección de Datos (GDPR) de la Unión Europea, la Ley de Privacidad del Consumidor de California (CCPA) y las normativas de privacidad vigentes en América Latina.
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 2. Información -->
+  <div class="policy-section" id="informacion">
+    <h2>2. Información que recopilamos</h2>
+
+    <h3>2.1 Información que proporcionas voluntariamente</h3>
+    <p>Podemos recopilar información personal cuando:</p>
+    <ul>
+      <li>Completas el formulario de contacto (nombre, dirección de email, mensaje)</li>
+      <li>Te suscribes a actualizaciones o boletines informativos</li>
+      <li>Nos envías un correo electrónico directamente</li>
+    </ul>
+
+    <h3>2.2 Información recopilada automáticamente</h3>
+    <p>Al visitar el Sitio, se pueden recopilar automáticamente ciertos datos técnicos, como:</p>
+    <ul>
+      <li>Dirección IP y datos de geolocalización aproximada</li>
+      <li>Tipo de navegador, sistema operativo y dispositivo</li>
+      <li>Páginas visitadas, tiempo de permanencia y rutas de navegación</li>
+      <li>URL de referencia (sitio desde el que llegaste)</li>
+      <li>Fecha y hora de la visita</li>
+    </ul>
+
+    <h3>2.3 Información de progreso en herramientas interactivas</h3>
+    <p>
+      Las herramientas interactivas del Sitio (quiz de práctica, flashcards) pueden almacenar datos de progreso de forma local en tu navegador mediante <em>localStorage</em>. Esta información permanece en tu dispositivo y no es transmitida a nuestros servidores.
+    </p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 3. Cookies -->
+  <div class="policy-section" id="cookies">
+    <h2>3. Cookies y tecnologías similares</h2>
+    <p>
+      Este Sitio utiliza cookies — pequeños archivos de texto que se almacenan en tu navegador — para mejorar la experiencia de usuario y analizar el tráfico del sitio. Los tipos de cookies que usamos son:
+    </p>
+
+    <h3>3.1 Cookies estrictamente necesarias</h3>
+    <p>Esenciales para el funcionamiento básico del Sitio. No recopilan información personal identificable y no pueden desactivarse.</p>
+
+    <h3>3.2 Cookies analíticas</h3>
+    <p>Utilizamos Google Analytics para recopilar información anónima sobre cómo los visitantes utilizan el Sitio (páginas vistas, tiempo en sitio, fuentes de tráfico). Esta información se usa únicamente para mejorar el contenido y la experiencia del usuario.</p>
+
+    <h3>3.3 Cookies de publicidad</h3>
+    <p>
+      Este Sitio puede utilizar Google AdSense para mostrar anuncios. Google y sus socios pueden usar cookies para mostrar anuncios basados en tus visitas anteriores a este Sitio y a otros sitios en internet. Puedes optar por no recibir anuncios personalizados visitando <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Configuración de anuncios de Google</a>.
+    </p>
+
+    <h3>3.4 Gestión de cookies</h3>
+    <p>
+      Puedes controlar y/o eliminar las cookies desde la configuración de tu navegador. Ten en cuenta que deshabilitar ciertas cookies puede afectar la funcionalidad del Sitio. Para más información sobre cómo gestionar cookies, visita <a href="https://www.aboutcookies.org" target="_blank" rel="noopener">aboutcookies.org</a>.
+    </p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 4. AdSense -->
+  <div class="policy-section" id="adsense">
+    <h2>4. Google AdSense y publicidad</h2>
+    <p>
+      Este Sitio participa en el programa de publicidad <strong>Google AdSense</strong>. Google, como proveedor externo, utiliza cookies para mostrar anuncios relevantes a los visitantes del Sitio basándose en sus visitas a este y otros sitios web.
+    </p>
+    <p>
+      El uso de la cookie DART por parte de Google le permite mostrar anuncios a los usuarios basándose en su visita a este Sitio y otros sitios en internet. Los usuarios pueden optar por no usar la cookie DART visitando la <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Política de privacidad de la red de contenido y anuncios de Google</a>.
+    </p>
+    <div class="info-box">
+      <strong>Nota importante:</strong> Nosotros no controlamos qué anuncios específicos muestra Google en nuestro sitio. Google utiliza información sobre tus intereses de navegación para personalizar los anuncios que ves. PMP2026 no tiene acceso a ni control sobre las cookies utilizadas por anunciantes externos.
+    </div>
+    <p>Los proveedores externos, incluido Google, utilizan cookies para mostrar anuncios basados en las visitas anteriores de un usuario al Sitio o a otros sitios web. Los usuarios pueden optar por no recibir publicidad personalizada visitando el <a href="https://optout.aboutads.info/" target="_blank" rel="noopener">Centro de preferencias de anuncios</a>.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 5. Analytics -->
+  <div class="policy-section" id="analitica">
+    <h2>5. Google Analytics</h2>
+    <p>
+      Utilizamos <strong>Google Analytics</strong> para analizar el uso del Sitio y mejorar nuestro contenido. Google Analytics recopila datos de forma anónima sobre cómo los visitantes interactúan con el Sitio, incluyendo páginas visitadas, duración de las sesiones y fuentes de tráfico.
+    </p>
+    <p>
+      Los datos recopilados por Google Analytics son procesados por Google según sus propias políticas de privacidad. Hemos habilitado la anonimización de IP en nuestra instalación de Google Analytics, por lo que tu dirección IP completa nunca es almacenada por Google.
+    </p>
+    <p>
+      Puedes desactivar el seguimiento de Google Analytics instalando el <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">complemento de inhabilitación del navegador de Google Analytics</a>.
+    </p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 6. Terceros -->
+  <div class="policy-section" id="terceros">
+    <h2>6. Servicios de terceros</h2>
+    <p>El Sitio puede contener enlaces o integraciones con los siguientes servicios externos:</p>
+    <ul>
+      <li><strong>Udemy:</strong> El Sitio enlaza a cursos en la plataforma Udemy. Udemy tiene su propia política de privacidad que regula el uso de tus datos en dicha plataforma.</li>
+      <li><strong>Google Fonts:</strong> Utilizamos fuentes de Google para la tipografía del Sitio. Google puede recopilar datos de uso según su propia política de privacidad.</li>
+      <li><strong>Google AdSense:</strong> Sistema de publicidad de Google (detallado en la sección 4).</li>
+      <li><strong>Google Analytics:</strong> Servicio de análisis web (detallado en la sección 5).</li>
+    </ul>
+    <p>
+      No somos responsables de las prácticas de privacidad de los sitios web de terceros. Te recomendamos revisar las políticas de privacidad de cada servicio externo que utilices.
+    </p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 7. Derechos -->
+  <div class="policy-section" id="derechos">
+    <h2>7. Tus derechos</h2>
+    <p>Dependiendo de tu ubicación, puedes tener los siguientes derechos con respecto a tus datos personales:</p>
+    <ul>
+      <li><strong>Acceso:</strong> Solicitar una copia de los datos personales que tenemos sobre ti.</li>
+      <li><strong>Rectificación:</strong> Solicitar la corrección de datos inexactos o incompletos.</li>
+      <li><strong>Eliminación:</strong> Solicitar la eliminación de tus datos personales ("derecho al olvido").</li>
+      <li><strong>Portabilidad:</strong> Solicitar que transfiramos tus datos a otro proveedor de servicios.</li>
+      <li><strong>Oposición:</strong> Oponerte al procesamiento de tus datos para fines de marketing directo.</li>
+      <li><strong>Restricción:</strong> Solicitar la limitación del procesamiento de tus datos en determinadas circunstancias.</li>
+    </ul>
+    <p>
+      Para ejercer cualquiera de estos derechos, contáctanos a través de nuestro <a href="contacto.html">formulario de contacto</a> o al correo <a href="mailto:hola@pmp2026.com">hola@pmp2026.com</a>. Responderemos a tu solicitud en un plazo máximo de 30 días.
+    </p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 8. Menores -->
+  <div class="policy-section" id="menores">
+    <h2>8. Menores de edad</h2>
+    <p>
+      Este Sitio está dirigido a adultos que buscan certificación profesional. No recopilamos intencionalmente información personal de menores de 13 años (o la edad mínima aplicable en tu jurisdicción). Si eres padre o tutor y crees que tu hijo ha proporcionado información personal a este Sitio, contáctanos para que podamos tomar las medidas apropiadas.
+    </p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 9. Cambios -->
+  <div class="policy-section" id="cambios">
+    <h2>9. Cambios a esta política</h2>
+    <p>
+      Podemos actualizar esta Política de Privacidad periódicamente para reflejar cambios en nuestras prácticas o en la legislación aplicable. Cuando realicemos cambios significativos, actualizaremos la fecha de "Última actualización" al inicio de este documento.
+    </p>
+    <p>
+      Te recomendamos revisar esta página periódicamente. El uso continuado del Sitio tras la publicación de cambios constituye tu aceptación de dichos cambios.
+    </p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 10. Contacto -->
+  <div class="policy-section" id="contacto">
+    <h2>10. Contacto</h2>
+    <p>
+      Si tienes preguntas, inquietudes o solicitudes relacionadas con esta Política de Privacidad o con el tratamiento de tus datos personales, puedes contactarnos a través de:
+    </p>
+    <ul>
+      <li><strong>Formulario web:</strong> <a href="contacto.html">pmp2026.com/contacto</a></li>
+      <li><strong>Email:</strong> <a href="mailto:hola@pmp2026.com">hola@pmp2026.com</a></li>
+    </ul>
+    <p>
+      Haremos todo lo posible para responder a tu consulta en un plazo de 48 horas hábiles.
+    </p>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="site-logo">PMP<span>2026</span></a>
+      <p>Preparación para el examen PMP basada en el PMBOK 8ª Edición. Recursos gratuitos para candidatos que quieren certificarse con el material actualizado al examen vigente.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Herramientas</h4>
+      <ul>
+        <li><a href="index.html">Quiz de Práctica</a></li>
+        <li><a href="index.html">Flashcards PMBOK 8</a></li>
+        <li><a href="index.html">8 Dominios</a></li>
+        <li><a href="index.html">PMBOK 8 vs 7</a></li>
+        <li><a href="index.html">Curso Completo</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Sitio</h4>
+      <ul>
+        <li><a href="acerca.html">Acerca de</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="privacidad.html">Política de Privacidad</a></li>
+        <li><a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252z" target="_blank">Curso en Udemy →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 PMP2026 · Todos los derechos reservados</span>
+    <span><a href="privacidad.html">Privacidad</a> · <a href="contacto.html">Contacto</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

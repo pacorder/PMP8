@@ -3,9 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2358850294363122"
-     crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-2358850294363122">
 <title>PMP 2026 | Preparación Examen PMP · PMBOK 8</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
@@ -901,9 +898,189 @@
     .vs-divider { display: none; }
     .summary-grid { grid-template-columns: 1fr 1fr; }
   }
+
+  /* ── GLOBAL SITE NAV ─────────────────────────────── */
+  .site-header {
+    background: var(--ink);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    padding: 0 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+  }
+
+  .site-header-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+    gap: 1rem;
+  }
+
+  .site-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  .site-logo span { color: var(--gold); }
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .site-nav::-webkit-scrollbar { display: none; }
+
+  .site-nav a {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.3rem;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .site-nav a:hover { color: #fff; background: rgba(255,255,255,0.07); }
+  .site-nav a.active { color: var(--gold); }
+
+  /* ── FOOTER MEJORADO ─────────────────────────────── */
+  .site-footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.4);
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  .footer-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-brand .site-logo {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.35);
+    max-width: 280px;
+  }
+
+  .footer-col h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    font-size: 0.83rem;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    max-width: 1000px;
+    margin: 1.5rem auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+  }
+
+  .footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; }
+  .footer-bottom a:hover { color: var(--gold); }
+
+  @media (max-width: 640px) {
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+    .site-header-inner { gap: 0.5rem; }
+    .site-logo { font-size: 0.88rem; }
+  }
+
+  /* ── DOMAIN SELECTOR ─────────────────────────────── */
+  .domain-selector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .domain-sel-btn {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1rem 1.1rem;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .domain-sel-btn:hover { border-color: var(--teal); box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+  .domain-sel-btn.active { border-color: var(--teal); background: rgba(26,107,107,0.06); }
+
+  .ds-icon { font-size: 1.4rem; }
+  .ds-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.85rem; color: var(--ink); }
+  .ds-count { font-size: 0.75rem; color: var(--mid); font-weight: 400; }
+  .domain-sel-btn.active .ds-count { color: var(--teal); }
+
+  @media (max-width: 480px) {
+    .domain-selector-grid { grid-template-columns: 1fr 1fr; }
+  }
 </style>
 </head>
 <body>
+
+<!-- ── SITE HEADER GLOBAL ─────────────────────────── -->
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="site-logo">PMP<span>2026</span></a>
+    <nav class="site-nav">
+      <a href="index.html" class="active">🏠 Inicio</a>
+      <a href="acerca.html">👤 Acerca</a>
+      <a href="contacto.html">✉️ Contacto</a>
+      <a href="privacidad.html">🔒 Privacidad</a>
+    </nav>
+  </div>
+</header>
 
 <!-- ── HERO ───────────────────────────────────────── -->
 <section class="hero">
@@ -1034,9 +1211,64 @@
 <section id="quiz" class="section">
   <div class="container">
     <h2 class="section-title">Quiz de Práctica</h2>
-    <p class="section-sub">Preguntas situacionales tipo examen PMP 2026. Sin trampa — solo el nivel real.</p>
+    <p class="section-sub">80 preguntas situacionales — 10 por cada dominio del PMBOK 8. Practica por dominio o en modo completo aleatorio.</p>
 
-    <div id="quiz-container">
+    <!-- Domain selector -->
+    <div id="quizSelector">
+      <div class="domain-selector-grid">
+        <button class="domain-sel-btn active" onclick="selectDomain('all', this)">
+          <span class="ds-icon">🎯</span>
+          <span class="ds-name">Todos los dominios</span>
+          <span class="ds-count">80 preguntas</span>
+        </button>
+        <button class="domain-sel-btn" onclick="selectDomain('Stakeholders', this)">
+          <span class="ds-icon">👥</span>
+          <span class="ds-name">Stakeholders</span>
+          <span class="ds-count">10 preguntas</span>
+        </button>
+        <button class="domain-sel-btn" onclick="selectDomain('Team', this)">
+          <span class="ds-icon">🤝</span>
+          <span class="ds-name">Team</span>
+          <span class="ds-count">10 preguntas</span>
+        </button>
+        <button class="domain-sel-btn" onclick="selectDomain('Development Approach', this)">
+          <span class="ds-icon">🔄</span>
+          <span class="ds-name">Development Approach</span>
+          <span class="ds-count">10 preguntas</span>
+        </button>
+        <button class="domain-sel-btn" onclick="selectDomain('Planning', this)">
+          <span class="ds-icon">📋</span>
+          <span class="ds-name">Planning</span>
+          <span class="ds-count">10 preguntas</span>
+        </button>
+        <button class="domain-sel-btn" onclick="selectDomain('Project Work', this)">
+          <span class="ds-icon">⚙️</span>
+          <span class="ds-name">Project Work</span>
+          <span class="ds-count">10 preguntas</span>
+        </button>
+        <button class="domain-sel-btn" onclick="selectDomain('Delivery', this)">
+          <span class="ds-icon">🚀</span>
+          <span class="ds-name">Delivery</span>
+          <span class="ds-count">10 preguntas</span>
+        </button>
+        <button class="domain-sel-btn" onclick="selectDomain('Measurement', this)">
+          <span class="ds-icon">📊</span>
+          <span class="ds-name">Measurement</span>
+          <span class="ds-count">10 preguntas</span>
+        </button>
+        <button class="domain-sel-btn" onclick="selectDomain('Uncertainty', this)">
+          <span class="ds-icon">🌀</span>
+          <span class="ds-name">Uncertainty</span>
+          <span class="ds-count">10 preguntas</span>
+        </button>
+      </div>
+      <div style="text-align:center;margin-top:1.5rem">
+        <button class="btn-primary" onclick="startQuiz()">▶ Comenzar Quiz</button>
+      </div>
+    </div>
+
+    <!-- Quiz in progress -->
+    <div id="quiz-container" style="display:none">
       <div class="quiz-progress">
         <div class="progress-bar-wrap">
           <div class="progress-bar" id="qProgress" style="width:0%"></div>
@@ -1059,10 +1291,13 @@
 
       <div class="quiz-result" id="qResult">
         <div class="result-score" id="rScore"></div>
-        <div class="result-label">de 10 preguntas correctas</div>
+        <div class="result-label" id="rLabel">preguntas correctas</div>
         <div class="result-message" id="rMsg"></div>
-        <button class="btn-primary" onclick="restartQuiz()" style="margin:0 auto;display:inline-flex">🔄 Intentar de nuevo</button>
-        <div style="margin-top:1rem">
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem">
+          <button class="btn-primary" onclick="restartQuiz()" style="margin:0">🔄 Repetir</button>
+          <button class="btn-primary" onclick="backToSelector()" style="margin:0;background:var(--teal)">← Cambiar dominio</button>
+        </div>
+        <div style="margin-top:0.5rem">
           <a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252z" target="_blank" class="btn-outline" style="border-color:var(--teal);color:var(--teal)">📚 Más práctica en el curso</a>
         </div>
       </div>
@@ -1402,10 +1637,42 @@
 </section>
 
 <!-- ── FOOTER ─────────────────────────────────────── -->
-<footer>
-  <p>PMP 2026 Exam Prep · Basado en PMBOK 8ª Edición · <a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252z" target="_blank">Ver Curso en Udemy →</a></p>
-</footer>
 
+<!-- ── SITE FOOTER GLOBAL ─────────────────────────── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="site-logo">PMP<span>2026</span></a>
+      <p>Preparación para el examen PMP basada en el PMBOK 8ª Edición. Recursos gratuitos para candidatos que quieren certificarse con el material actualizado al examen vigente.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Herramientas</h4>
+      <ul>
+        <li><a href="index.html#quiz">Quiz de Práctica</a></li>
+        <li><a href="index.html#flash">Flashcards PMBOK 8</a></li>
+        <li><a href="index.html#domains">8 Dominios</a></li>
+        <li><a href="index.html#novedades">PMBOK 8 vs 7</a></li>
+        <li><a href="index.html#curso">Curso Completo</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Sitio</h4>
+      <ul>
+        <li><a href="acerca.html">Acerca de</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="privacidad.html">Política de Privacidad</a></li>
+        <li><a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252z" target="_blank">Curso en Udemy →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 PMP2026.com · Todos los derechos reservados</span>
+    <span>
+      <a href="privacidad.html">Privacidad</a> ·
+      <a href="contacto.html">Contacto</a>
+    </span>
+  </div>
+</footer>
 <script>
 // ── NAVIGATION ──────────────────────────────────────
 function switchSection(id, btn) {
@@ -1413,7 +1680,7 @@ function switchSection(id, btn) {
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
-  if (id === 'quiz' && currentQ === 0) initQuiz();
+  // quiz initializes when user clicks "Comenzar"
   if (id === 'flash') renderFlash();
   if (id === 'domains') renderDomains();
 }
@@ -1424,95 +1691,483 @@ function goTo(id) {
   document.querySelector('.nav-wrap').scrollIntoView({ behavior: 'smooth' });
 }
 
-// ── QUIZ DATA ────────────────────────────────────────
-const questions = [
-  {
-    domain: "Stakeholder Performance Domain",
-    q: "Estás gestionando un proyecto de transformación digital. Un stakeholder clave se vuelve cada vez más crítico en las reuniones y genera tensión en el equipo. ¿Cuál es tu MEJOR primera acción?",
-    opts: ["Escalar la situación al patrocinador del proyecto", "Solicitar al stakeholder que asista a menos reuniones", "Reunirte individualmente con el stakeholder para entender sus preocupaciones reales", "Documentar el comportamiento en el registro de riesgos"],
-    ans: 2,
-    exp: "El PM efectivo busca primero entender la raíz del problema. Una reunión 1:1 permite identificar si hay preocupaciones legítimas no atendidas. Escalar o limitar su participación sería prematuro y dañaría la relación."
-  },
-  {
-    domain: "Team Performance Domain",
-    q: "Tu equipo ágil lleva 3 sprints con velocidad inconsistente. En la retrospectiva, algunos miembros culpan al Product Owner por cambios constantes en el backlog. ¿Qué debes hacer PRIMERO?",
-    opts: ["Reemplazar al Product Owner por alguien más estable", "Facilitar una conversación estructurada entre el equipo y el Product Owner sobre expectativas y procesos", "Limitar los cambios al backlog con un proceso de control de cambios formal", "Documentar el problema y esperar a que mejore en el próximo sprint"],
-    ans: 1,
-    exp: "En un entorno ágil, la colaboración y comunicación son fundamentales. Facilitar una conversación honesta aborda la causa raíz. Las otras opciones son reactivas o imponen rigidez contraproducente en un contexto ágil."
-  },
-  {
-    domain: "Uncertainty Performance Domain",
-    q: "Identificas un riesgo con alta probabilidad e impacto alto en tu proyecto. Sin embargo, el costo de mitigarlo supera el presupuesto disponible. ¿Cuál es la respuesta MÁS apropiada?",
-    opts: ["Ignorar el riesgo ya que no hay presupuesto para mitigarlo", "Transferir el riesgo a un tercero mediante un contrato o seguro", "Aceptar el riesgo activamente y definir un plan de contingencia detallado", "Cancelar el proyecto porque el riesgo es demasiado alto"],
-    ans: 2,
-    exp: "Cuando la mitigación no es económicamente viable, la aceptación activa con un plan de contingencia es la respuesta correcta. Se documenta el riesgo, se define un trigger y acciones de respuesta sin gastar en prevención."
-  },
-  {
-    domain: "Planning Performance Domain",
-    q: "Tu proyecto tiene requisitos altamente cambiantes y el cliente no puede definir el alcance completo al inicio. ¿Qué enfoque de ciclo de vida es el MÁS adecuado?",
-    opts: ["Predictivo (cascada), con un cronograma detallado desde el inicio", "Ágil iterativo, entregando valor en ciclos cortos con retroalimentación continua", "No planificar nada hasta que el cliente tenga los requisitos claros", "Usar solo el juicio del PM para tomar decisiones sin involucrar al cliente"],
-    ans: 1,
-    exp: "Con alta incertidumbre en requisitos, un ciclo de vida ágil o iterativo permite adaptarse al cambio, validar con el cliente frecuentemente y reducir el riesgo de construir lo incorrecto."
-  },
-  {
-    domain: "Delivery Performance Domain",
-    q: "En la revisión de sprint, el cliente rechaza una funcionalidad que el equipo consideraba 'terminada'. El equipo argumenta que cumplió con la Definition of Done. ¿Qué debes hacer?",
-    opts: ["Defender al equipo y decirle al cliente que la funcionalidad está completa según los estándares acordados", "Investigar por qué la Definition of Done no refleja las expectativas reales del cliente y trabajar en alinearlas", "Eliminar la Definition of Done para dar más flexibilidad al cliente", "Escalar al sponsor para que tome la decisión"],
-    ans: 1,
-    exp: "La Definition of Done debe reflejar el valor real para el cliente. Si hay desalineación, es un problema de comunicación de expectativas. El PM debe facilitar su actualización colaborativa, no defender una herramienta por encima del valor entregado."
-  },
-  {
-    domain: "Measurement Performance Domain",
-    q: "Tu proyecto tiene SPI = 0.85 y CPI = 1.10. ¿Cuál es la interpretación más precisa?",
-    opts: ["El proyecto está atrasado y gastando de más", "El proyecto está adelantado en tiempo pero gastando de más", "El proyecto está atrasado en cronograma pero por debajo del presupuesto", "El proyecto está adelantado y por debajo del presupuesto"],
-    ans: 2,
-    exp: "SPI < 1 indica retraso en cronograma. CPI > 1 indica que se está gastando menos de lo planeado. El equipo es eficiente con el presupuesto pero necesita acelerar el ritmo de entrega."
-  },
-  {
-    domain: "Stakeholder Performance Domain",
-    q: "Un stakeholder poderoso te pide agregar funcionalidades que claramente están fuera del alcance acordado, argumentando que 'solo son pequeñas cosas'. ¿Cuál es tu MEJOR respuesta?",
-    opts: ["Agregar las funcionalidades para mantener la relación con el stakeholder", "Rechazar categóricamente cualquier cambio fuera del alcance", "Reconocer la solicitud, evaluar el impacto en alcance/tiempo/costo y llevarla al proceso de control de cambios", "Ignorar la solicitud y esperar a que el stakeholder la olvide"],
-    ans: 2,
-    exp: "Todo cambio, por pequeño que parezca, debe pasar por el proceso de control de cambios. Esto protege al proyecto, da visibilidad al stakeholder sobre el impacto real y mantiene la integridad del proyecto."
-  },
-  {
-    domain: "Team Performance Domain",
-    q: "Eres PM de un equipo distribuido en 4 zonas horarias. Notas que los miembros en Asia participan muy poco en las reuniones de equipo. ¿Qué debes hacer?",
-    opts: ["Decirles que deben participar más o serán removidos del equipo", "Reorganizar los horarios de reuniones y explorar alternativas asíncronas para incluirlos efectivamente", "Aceptar que la participación baja es normal en equipos distribuidos", "Reemplazar a los miembros de Asia con personas en zonas horarias más convenientes"],
-    ans: 1,
-    exp: "La inclusión efectiva en equipos distribuidos requiere adaptaciones estructurales. Rotar horarios, usar herramientas asíncronas y crear canales alternativos de participación es la respuesta de un líder efectivo."
-  },
-  {
-    domain: "Delivery Performance Domain",
-    q: "A mitad del proyecto, el sponsor te informa que el presupuesto se redujo en 20%. El cronograma y alcance actuales son inviables. ¿Cuál es tu PRIMER paso?",
-    opts: ["Continuar con el plan actual y reportar el problema solo si ocurre un retraso", "Analizar el impacto, identificar opciones de ajuste de alcance/cronograma y presentar alternativas al sponsor para decisión", "Reducir la calidad del entregable para mantener el alcance y el cronograma", "Renunciar al proyecto por ser inviable"],
-    ans: 1,
-    exp: "El PM debe analizar el impacto real y presentar opciones claras al sponsor. No es el PM quien decide qué sacrificar — es una decisión de negocio que requiere información objetiva y participación de los tomadores de decisiones."
-  },
-  {
-    domain: "Uncertainty Performance Domain",
-    q: "En un proyecto ágil, el equipo descubre durante el sprint que una tecnología clave tiene una limitación crítica no conocida previamente. ¿Qué debe hacer el PM?",
-    opts: ["Esperar al final del sprint para reportarlo en la retrospectiva", "Escalar inmediatamente al sponsor y pausar el sprint", "Reunir al equipo para evaluar el impacto, explorar alternativas y comunicar transparentemente al Product Owner y stakeholders", "Ocultar el problema hasta encontrar una solución para no generar pánico"],
-    ans: 2,
-    exp: "La transparencia y la adaptación temprana son valores ágiles fundamentales. Reunir al equipo, evaluar opciones e informar a los stakeholders permite decisiones informadas rápidas. La opacidad nunca es la respuesta correcta."
-  }
+// ── QUIZ DATA — 80 preguntas, 10 por dominio ─────────
+const allQuestions = [
+
+  // ══════════════════════════════════════════
+  // DOMINIO 1: STAKEHOLDERS (10 preguntas)
+  // ══════════════════════════════════════════
+  { domain:"Stakeholders", domainFull:"Stakeholder Performance Domain",
+    q:"Estás gestionando un proyecto de transformación digital. Un stakeholder clave se vuelve cada vez más crítico en las reuniones y genera tensión en el equipo. ¿Cuál es tu MEJOR primera acción?",
+    opts:["Escalar la situación al patrocinador del proyecto","Solicitar al stakeholder que asista a menos reuniones","Reunirte individualmente con el stakeholder para entender sus preocupaciones reales","Documentar el comportamiento en el registro de riesgos"],
+    ans:2, exp:"El PM efectivo busca primero entender la raíz del problema. Una reunión 1:1 permite identificar preocupaciones legítimas no atendidas. Escalar o limitar su participación sería prematuro y dañaría la relación." },
+
+  { domain:"Stakeholders", domainFull:"Stakeholder Performance Domain",
+    q:"Un stakeholder poderoso te pide agregar funcionalidades fuera del alcance acordado, argumentando que 'solo son pequeñas cosas'. ¿Cuál es tu MEJOR respuesta?",
+    opts:["Agregar las funcionalidades para mantener la relación","Rechazar categóricamente cualquier cambio","Reconocer la solicitud, evaluar el impacto y llevarla al proceso de control de cambios","Ignorar la solicitud y esperar a que la olvide"],
+    ans:2, exp:"Todo cambio debe pasar por el proceso de control de cambios. Esto protege al proyecto, da visibilidad al stakeholder sobre el impacto real y mantiene la integridad del proyecto." },
+
+  { domain:"Stakeholders", domainFull:"Stakeholder Performance Domain",
+    q:"Al inicio del proyecto, ¿cuál es el momento ÓPTIMO para identificar a los stakeholders según el PMBOK 8?",
+    opts:["Al finalizar la fase de planificación, cuando el alcance está claro","Lo antes posible, idealmente en la fase de inicio del proyecto","Solo cuando los stakeholders se presentan voluntariamente","Durante la ejecución, conforme surgen problemas"],
+    ans:1, exp:"El PMBOK 8 enfatiza identificar stakeholders desde el inicio. Los stakeholders tempranos no identificados representan riesgos significativos: pueden bloquear el proyecto, añadir requisitos tardíos o no dar su aprobación." },
+
+  { domain:"Stakeholders", domainFull:"Stakeholder Performance Domain",
+    q:"Un stakeholder que previamente apoyaba el proyecto ahora parece desinteresado y no responde a tus comunicaciones. Según el Stakeholder Engagement Continuum del PMBOK 8, ¿cómo clasificarías su estado actual?",
+    opts:["Desconocedor (Unaware)","Resistente (Resistant)","Neutral","Líder (Leading)"],
+    ans:0, exp:"Un stakeholder que no responde a comunicaciones posiblemente ha dejado de estar al tanto del proyecto o sus beneficios. El PM debe investigar la causa y moverlo hacia un nivel de involucramiento más alto." },
+
+  { domain:"Stakeholders", domainFull:"Stakeholder Performance Domain",
+    q:"Tienes dos stakeholders con intereses opuestos sobre el alcance del proyecto. Ambos tienen alto poder e influencia. ¿Cuál es la estrategia MÁS apropiada?",
+    opts:["Seguir las instrucciones del stakeholder con mayor autoridad jerárquica","Ignorar el conflicto hasta que alguno ceda espontáneamente","Facilitar una sesión conjunta para alinear expectativas y encontrar un acuerdo que maximice el valor del proyecto","Escalar inmediatamente al comité directivo para que tome la decisión"],
+    ans:2, exp:"El PMBOK 8 promueve el co-diseño y la alineación colaborativa. Una sesión facilitada permite identificar intereses comunes y acuerdos que maximizan el valor. Escalar sin intentar resolver primero sería prematuro." },
+
+  { domain:"Stakeholders", domainFull:"Stakeholder Performance Domain",
+    q:"¿Cuál de las siguientes acciones describe MEJOR el concepto de 'involucramiento efectivo de stakeholders' según el PMBOK 8?",
+    opts:["Enviar reportes de estado semanales a todos los stakeholders","Crear una comunicación bidireccional adaptada a las necesidades e intereses de cada stakeholder","Organizar una reunión mensual de actualización para todos","Documentar todas las decisiones en el acta de reuniones"],
+    ans:1, exp:"El PMBOK 8 distingue entre informar (unidireccional) e involucrar (bidireccional). El involucramiento efectivo requiere escuchar, adaptar la comunicación y co-crear soluciones con los stakeholders." },
+
+  { domain:"Stakeholders", domainFull:"Stakeholder Performance Domain",
+    q:"Un grupo de usuarios finales que será impactado por el proyecto no ha sido incluido en la planificación. Los descubres a mitad de ejecución. ¿Qué debes hacer PRIMERO?",
+    opts:["Continuar el proyecto ya que el alcance está aprobado","Agregar a los usuarios finales al registro de stakeholders y analizar su impacto e intereses","Informar al sponsor y esperar su instrucción","Realizar una reunión de todos los stakeholders actuales para votar si incluirlos"],
+    ans:1, exp:"Identificar y analizar stakeholders es un proceso continuo. Al descubrir nuevos stakeholders, el PM debe incorporarlos inmediatamente al registro, analizar su poder e interés, y adaptar la estrategia de comunicación." },
+
+  { domain:"Stakeholders", domainFull:"Stakeholder Performance Domain",
+    q:"El sponsor del proyecto cambia a mitad de ejecución. La nueva sponsor tiene prioridades distintas y cuestiona decisiones ya tomadas. ¿Cuál es tu MEJOR primera acción?",
+    opts:["Defender todas las decisiones previas ya que están formalmente aprobadas","Reunirte con la nueva sponsor para presentar el estado del proyecto, explicar las decisiones tomadas y entender sus expectativas","Solicitar una auditoría del proyecto antes de continuar","Consultar con el equipo si se debe replantear el alcance completo"],
+    ans:1, exp:"Un cambio de sponsor es un evento crítico de stakeholders. El PM debe onboardear activamente a la nueva sponsor, establecer una relación de confianza y alinear expectativas sin asumir que las prioridades son idénticas." },
+
+  { domain:"Stakeholders", domainFull:"Stakeholder Performance Domain",
+    q:"¿Cuál es la diferencia entre el 'poder' y el 'interés' de un stakeholder en la matriz Poder/Interés?",
+    opts:["Poder = capacidad de afectar el proyecto; Interés = nivel de autoridad presupuestaria","Poder = capacidad de influir en el resultado; Interés = grado en que le importan los resultados del proyecto","Poder = tiempo disponible; Interés = conocimiento técnico","Son sinónimos en la gestión moderna de stakeholders"],
+    ans:1, exp:"En la matriz Poder/Interés, el poder refleja la capacidad de un stakeholder de influir o bloquear el proyecto, mientras que el interés mide cuánto le importan los resultados. Ambas dimensiones determinan la estrategia de gestión." },
+
+  { domain:"Stakeholders", domainFull:"Stakeholder Performance Domain",
+    q:"Un stakeholder resistente al proyecto comienza a difundir información negativa sobre él en la organización. ¿Cuál es la respuesta MÁS efectiva a largo plazo?",
+    opts:["Solicitar al sponsor que lo excluya del proyecto formalmente","Ignorar la situación ya que no tiene autoridad para detener el proyecto","Entender sus preocupaciones reales, involucrarle activamente y abordar las causas de su resistencia","Enviar un comunicado formal a la organización refutando sus afirmaciones"],
+    ans:2, exp:"La resistencia generalmente tiene una causa raíz: preocupaciones no atendidas, falta de información o pérdida de control. Involucrar activamente al stakeholder resistente y abordar sus preocupaciones reales es más efectivo que confrontar o ignorar." },
+
+  // ══════════════════════════════════════════
+  // DOMINIO 2: TEAM (10 preguntas)
+  // ══════════════════════════════════════════
+  { domain:"Team", domainFull:"Team Performance Domain",
+    q:"Tu equipo ágil lleva 3 sprints con velocidad inconsistente. En la retrospectiva, miembros culpan al Product Owner por cambios constantes en el backlog. ¿Qué debes hacer PRIMERO?",
+    opts:["Reemplazar al Product Owner","Facilitar una conversación estructurada entre el equipo y el Product Owner sobre expectativas y procesos","Limitar los cambios al backlog con un control de cambios formal","Documentar el problema y esperar a que mejore"],
+    ans:1, exp:"En un entorno ágil, la colaboración es fundamental. Facilitar una conversación honesta aborda la causa raíz. Las otras opciones son reactivas o imponen rigidez contraproducente en un contexto ágil." },
+
+  { domain:"Team", domainFull:"Team Performance Domain",
+    q:"¿Qué describe MEJOR el concepto de Servant Leadership que el PMBOK 8 establece como modelo central para el PM?",
+    opts:["El PM toma todas las decisiones técnicas del equipo para garantizar calidad","El PM enfoca su energía en eliminar impedimentos, crear condiciones de éxito y habilitar la autonomía del equipo","El PM delega toda responsabilidad al equipo y no interviene","El PM supervisa el trabajo de cada miembro para garantizar el cumplimiento"],
+    ans:1, exp:"Servant Leadership invierte la pirámide tradicional: el líder está al servicio del equipo. El PM facilita, elimina obstáculos, protege al equipo y crea el entorno para que puedan hacer su mejor trabajo." },
+
+  { domain:"Team", domainFull:"Team Performance Domain",
+    q:"Eres PM de un equipo distribuido en 4 zonas horarias. Los miembros en Asia participan muy poco en reuniones. ¿Qué debes hacer?",
+    opts:["Decirles que deben participar más o serán removidos","Reorganizar horarios y explorar alternativas asíncronas para incluirlos efectivamente","Aceptar que la participación baja es normal en equipos distribuidos","Reemplazar a los miembros en zonas horarias inconvenientes"],
+    ans:1, exp:"La inclusión efectiva en equipos distribuidos requiere adaptaciones estructurales. Rotar horarios, usar herramientas asíncronas y crear canales alternativos de participación es la respuesta de un líder efectivo." },
+
+  { domain:"Team", domainFull:"Team Performance Domain",
+    q:"¿Qué es la 'seguridad psicológica' y por qué el PMBOK 8 la considera fundamental para equipos de alto desempeño?",
+    opts:["Un entorno físicamente seguro que cumple normas de salud ocupacional","La condición donde los miembros se sienten seguros para compartir ideas, señalar errores y tomar riesgos interpersonales sin temor a consecuencias negativas","Un sistema de confidencialidad que protege los datos del equipo","La garantía de que los miembros del equipo no serán despedidos durante el proyecto"],
+    ans:1, exp:"La seguridad psicológica (concepto de Amy Edmondson adoptado por el PMBOK 8) es la base de la innovación y aprendizaje en equipos. Sin ella, los errores se ocultan, las ideas no se comparten y el equipo no puede mejorar." },
+
+  { domain:"Team", domainFull:"Team Performance Domain",
+    q:"Dos miembros del equipo tienen un conflicto personal que está afectando la productividad del sprint. ¿Cuál es la respuesta MÁS apropiada según el PMBOK 8?",
+    opts:["Ignorar el conflicto y esperar a que se resuelva solo","Remover a uno de los dos del proyecto para eliminar la fricción","Intervenir como facilitador para que ambos expresen sus perspectivas y lleguen a un acuerdo constructivo","Escalar el conflicto a Recursos Humanos inmediatamente"],
+    ans:2, exp:"El PMBOK 8 ve los conflictos como oportunidades de crecimiento. El PM actúa como facilitador, no como juez. La resolución colaborativa fortalece al equipo; ignorar o escalar prematuramente deteriora la cohesión." },
+
+  { domain:"Team", domainFull:"Team Performance Domain",
+    q:"Un miembro del equipo con alto desempeño técnico tiene problemas de comunicación con otros miembros. ¿Qué debe hacer el PM?",
+    opts:["Ignorar el problema ya que su desempeño técnico es excelente","Removerlo del equipo para proteger la dinámica grupal","Brindarle coaching específico en habilidades de comunicación y establecer expectativas claras de comportamiento colaborativo","Pedirle al equipo que se adapte al estilo del miembro técnico"],
+    ans:2, exp:"El PM tiene responsabilidad de desarrollo integral de su equipo. El coaching dirigido aborda el problema de raíz. Ignorarlo perjudica al equipo; removerlo sin intervención sería una pérdida de talento y recursos." },
+
+  { domain:"Team", domainFull:"Team Performance Domain",
+    q:"¿Cuál de los siguientes describe el modelo de Tuckman aplicado a la formación de equipos?",
+    opts:["Planificar, Ejecutar, Monitorear, Cerrar","Forming, Storming, Norming, Performing, Adjourning","Inicio, Crecimiento, Madurez, Declive","Identificar, Analizar, Responder, Monitorear"],
+    ans:1, exp:"El modelo de Tuckman (Forming-Storming-Norming-Performing-Adjourning) describe las etapas naturales de desarrollo de un equipo. El PM debe reconocer en qué etapa está el equipo y adaptar su estilo de liderazgo en consecuencia." },
+
+  { domain:"Team", domainFull:"Team Performance Domain",
+    q:"El equipo está desmotivado porque siente que su trabajo no tiene impacto real en la organización. ¿Qué debe hacer el PM?",
+    opts:["Ignorar la situación ya que la motivación es responsabilidad de cada individuo","Ofrecer incentivos económicos adicionales","Conectar explícitamente el trabajo del equipo con los beneficios y resultados de negocio esperados del proyecto","Organizar actividades de team building para mejorar el ánimo"],
+    ans:2, exp:"La motivación intrínseca viene del propósito y significado. El PM debe crear esa conexión entre el trabajo diario del equipo y el impacto real del proyecto. Las actividades de team building y los incentivos son soluciones superficiales si no hay propósito claro." },
+
+  { domain:"Team", domainFull:"Team Performance Domain",
+    q:"En tu equipo híbrido, los miembros presenciales tienen más acceso informal al PM que los remotos. ¿Qué riesgo representa esto?",
+    opts:["No representa un riesgo significativo, es normal en equipos híbridos","Puede crear percepción de favoritismo y aislar a los miembros remotos, afectando la cohesión y equidad del equipo","Solo es un problema si los miembros remotos se quejan formalmente","Los miembros presenciales deberían tener más acceso por su mayor compromiso"],
+    ans:1, exp:"El acceso desigual al PM en equipos híbridos es un riesgo real de equidad e inclusión. El PM debe crear intencionalmente canales de acceso equitativos para todos los miembros, independientemente de su ubicación." },
+
+  { domain:"Team", domainFull:"Team Performance Domain",
+    q:"Un miembro del equipo indica que está sobrecargado de trabajo y al borde del agotamiento. ¿Cuál es tu respuesta prioritaria como PM?",
+    opts:["Decirle que todos están bajo presión y que debe seguir adelante","Reasignar inmediatamente parte de su carga a otros miembros y tener una conversación privada para entender la situación completa","Escalar al gerente funcional del miembro para que lo gestione","Eliminarlo de las tareas críticas y asignarlo solo a trabajo de baja prioridad"],
+    ans:1, exp:"El bienestar del equipo es responsabilidad del PM. La sobrecarga sostenida genera errores, baja calidad y rotación. La respuesta correcta combina acción inmediata (aliviar la carga) con entendimiento (conversación) para solucionar la causa raíz." },
+
+  // ══════════════════════════════════════════
+  // DOMINIO 3: DEVELOPMENT APPROACH (10 preguntas)
+  // ══════════════════════════════════════════
+  { domain:"Development Approach", domainFull:"Development Approach & Life Cycle Domain",
+    q:"Tu proyecto tiene requisitos altamente cambiantes y el cliente no puede definir el alcance completo al inicio. ¿Qué ciclo de vida es el MÁS adecuado?",
+    opts:["Predictivo (cascada) con cronograma detallado desde el inicio","Ágil iterativo entregando valor en ciclos cortos con retroalimentación continua","No planificar nada hasta que el cliente tenga los requisitos claros","Usar solo el juicio del PM sin involucrar al cliente"],
+    ans:1, exp:"Con alta incertidumbre en requisitos, un ciclo de vida ágil o iterativo permite adaptarse al cambio, validar con el cliente frecuentemente y reducir el riesgo de construir lo incorrecto." },
+
+  { domain:"Development Approach", domainFull:"Development Approach & Life Cycle Domain",
+    q:"¿Qué es el 'Tailoring' según el PMBOK 8 y por qué es considerado una competencia central del PM?",
+    opts:["Adaptar el alcance del proyecto a las restricciones presupuestarias","La habilidad de adaptar deliberadamente métodos, herramientas y prácticas al contexto específico del proyecto, organización y stakeholders","Personalizar el software de gestión de proyectos para el equipo","Modificar los entregables según los comentarios del cliente"],
+    ans:1, exp:"El Tailoring en el PMBOK 8 es una competencia formal: el PM no aplica un marco de forma mecánica, sino que adapta conscientemente qué usar, cuándo y cómo según las características únicas de cada proyecto y contexto." },
+
+  { domain:"Development Approach", domainFull:"Development Approach & Life Cycle Domain",
+    q:"Un proyecto de construcción de infraestructura tiene requisitos perfectamente definidos, bajo nivel de incertidumbre y entregables físicos claros. ¿Qué ciclo de vida es MÁS apropiado?",
+    opts:["Ágil puro con sprints de 2 semanas","Predictivo (cascada) con fases bien definidas y aprobaciones formales","Kanban continuo sin iteraciones fijas","Cualquiera de los anteriores, ya que son equivalentes"],
+    ans:1, exp:"Un ciclo predictivo es ideal cuando los requisitos son estables, la incertidumbre es baja y los entregables son físicos y bien definidos. El ágil agrega overhead innecesario cuando el alcance no va a cambiar." },
+
+  { domain:"Development Approach", domainFull:"Development Approach & Life Cycle Domain",
+    q:"¿En qué situación es MÁS apropiado usar un ciclo de vida híbrido?",
+    opts:["Cuando el equipo no conoce ni metodología ágil ni predictiva","Cuando algunas fases del proyecto tienen alta certeza (adquisiciones, contratos) y otras tienen alta variabilidad (desarrollo, pruebas)","Cuando el cliente no sabe qué quiere en ninguna parte del proyecto","Cuando hay un solo integrante en el equipo de proyecto"],
+    ans:1, exp:"Un ciclo híbrido combina intencionalmente lo mejor de los enfoques predictivos y ágiles. Es ideal cuando diferentes fases del mismo proyecto tienen niveles de incertidumbre distintos, como infraestructura predictiva + desarrollo ágil." },
+
+  { domain:"Development Approach", domainFull:"Development Approach & Life Cycle Domain",
+    q:"¿Cuál es la diferencia entre un ciclo de vida iterativo y uno incremental?",
+    opts:["Son sinónimos, el PMBOK 8 los usa indistintamente","Iterativo: el equipo refina y mejora el producto en cada ciclo; Incremental: el equipo añade funcionalidades completas en cada entrega","Iterativo: solo para proyectos de software; Incremental: para proyectos físicos","Incremental: requiere más documentación; Iterativo: menos documentación"],
+    ans:1, exp:"En el ciclo iterativo, el equipo construye una versión y la refina en sucesivos ciclos hasta alcanzar la calidad deseada. En el incremental, cada ciclo agrega una nueva funcionalidad completa y lista para usar." },
+
+  { domain:"Development Approach", domainFull:"Development Approach & Life Cycle Domain",
+    q:"Tu organización quiere implementar SAFe (Scaled Agile Framework) para un programa de 5 equipos. ¿Cuál es el rol del PM en este contexto?",
+    opts:["Convertirse en Scrum Master de todos los equipos simultáneamente","Actuar como Release Train Engineer o coordinar con él para alinear el trabajo de los equipos al nivel de programa","Eliminar cualquier rol de gestión ya que SAFe es completamente autogestionado","Continuar gestionando como un proyecto tradicional e ignorar SAFe"],
+    ans:1, exp:"En entornos SAFe, el PM generalmente colabora con el Release Train Engineer (RTE) para gestionar las dependencias entre equipos, la planificación de PI (Program Increment) y la coordinación del programa completo." },
+
+  { domain:"Development Approach", domainFull:"Development Approach & Life Cycle Domain",
+    q:"¿Cuál de los siguientes factores es el MÁS relevante para decidir qué ciclo de vida usar en un proyecto?",
+    opts:["La preferencia personal del PM","La herramienta de software de gestión disponible","El nivel de incertidumbre de los requisitos, el tipo de entregable y la cultura organizacional","El tamaño del presupuesto del proyecto"],
+    ans:2, exp:"El Tailoring del ciclo de vida en el PMBOK 8 considera tres factores principales: la incertidumbre y variabilidad de los requisitos, las características del entregable (físico vs. digital, único vs. replicable) y la cultura organizacional." },
+
+  { domain:"Development Approach", domainFull:"Development Approach & Life Cycle Domain",
+    q:"En Scrum, el Sprint Retrospective tiene como objetivo principal:",
+    opts:["Revisar los entregables del sprint con el cliente","Planificar el trabajo del siguiente sprint","Reflexionar sobre el proceso del equipo e identificar mejoras concretas para el próximo sprint","Hacer la actualización del presupuesto y cronograma"],
+    ans:2, exp:"La retrospectiva es el evento de mejora continua del equipo en Scrum. Se enfoca en cómo trabajaron juntos (proceso, herramientas, relaciones), no en qué entregaron. Es el corazón de la cultura de aprendizaje ágil." },
+
+  { domain:"Development Approach", domainFull:"Development Approach & Life Cycle Domain",
+    q:"Un proyecto tiene una fase de diseño con alta incertidumbre seguida de una fase de manufactura muy definida. ¿Cuál es el mejor enfoque?",
+    opts:["Usar ágil puro para todo el proyecto","Usar predictivo puro para todo el proyecto","Usar ágil en diseño y predictivo en manufactura (híbrido)","Dividir el proyecto en dos proyectos separados con metodologías distintas"],
+    ans:2, exp:"Un enfoque híbrido es la respuesta correcta cuando distintas fases tienen características diferentes. Diseño ágil permite explorar y refinar; manufactura predictiva garantiza control y calidad en la producción física." },
+
+  { domain:"Development Approach", domainFull:"Development Approach & Life Cycle Domain",
+    q:"¿Qué significa que un proyecto tenga un ciclo de vida 'adaptativo' según el PMBOK 8?",
+    opts:["Que el PM puede cambiar el presupuesto en cualquier momento","Que el alcance se define y refina iterativamente en función del aprendizaje y la retroalimentación continua","Que el equipo puede ignorar los requisitos del cliente si técnicamente es más conveniente","Que no existe ningún tipo de planificación formal"],
+    ans:1, exp:"Un ciclo adaptativo parte de la premisa de que los requisitos evolucionarán. El alcance no se fija al inicio, sino que se descubre y refina en cada iteración. Esto requiere una relación muy activa con el cliente y tolerancia a la ambigüedad." },
+
+  // ══════════════════════════════════════════
+  // DOMINIO 4: PLANNING (10 preguntas)
+  // ══════════════════════════════════════════
+  { domain:"Planning", domainFull:"Planning Performance Domain",
+    q:"¿Qué es la planificación progresiva (rolling wave planning) y cuándo es MÁS útil?",
+    opts:["Planificar todo el proyecto en detalle antes de comenzar cualquier trabajo","Planificar en detalle solo el trabajo próximo e ir refinando el plan a medida que se obtiene más información","Revisar el plan solo cuando hay cambios aprobados","Crear múltiples planes de contingencia para todos los escenarios posibles"],
+    ans:1, exp:"La planificación progresiva reconoce que la incertidumbre disminuye con el tiempo. Planificar en detalle solo lo que se conoce bien y refinar el futuro conforme avanza el proyecto es más realista que un plan detallado que inevitablemente cambiará." },
+
+  { domain:"Planning", domainFull:"Planning Performance Domain",
+    q:"El cliente pide que el proyecto se complete 3 meses antes de lo estimado, sin reducir el alcance ni aumentar el presupuesto. ¿Cuál es la respuesta MÁS apropiada del PM?",
+    opts:["Aceptar el cambio para mantener la relación con el cliente","Rechazar el cambio porque es imposible","Analizar el impacto, presentar las opciones disponibles (ej: reducir alcance, aumentar recursos, aceptar más riesgo) y permitir que el cliente tome la decisión informada","Pedir a la dirección que negocie directamente con el cliente"],
+    ans:2, exp:"La triple restricción (alcance-tiempo-costo) implica que cambiar una variable afecta las demás. El PM presenta opciones con sus trade-offs y deja la decisión al cliente. Ni aceptar sin análisis ni rechazar sin alternativas es correcto." },
+
+  { domain:"Planning", domainFull:"Planning Performance Domain",
+    q:"¿Cuál es el propósito principal de la Work Breakdown Structure (WBS) en la planificación de un proyecto?",
+    opts:["Asignar responsabilidades a cada miembro del equipo","Descomponer el alcance total del proyecto en entregables manejables para facilitar la planificación, estimación y control","Calcular el presupuesto del proyecto","Definir la secuencia de actividades del cronograma"],
+    ans:1, exp:"La WBS descompone el alcance en entregables más pequeños y manejables. Esto facilita estimar con mayor precisión, asignar responsabilidades, identificar dependencias y monitorear el avance. No es un cronograma ni un plan de recursos." },
+
+  { domain:"Planning", domainFull:"Planning Performance Domain",
+    q:"En un proyecto con alta incertidumbre, ¿qué técnica de estimación es MÁS recomendada?",
+    opts:["Estimación análoga basada en proyectos históricos similares","Estimación de tres puntos (optimista, más probable, pesimista) considerando la incertidumbre","Estimación bottom-up detallada desde el inicio","Asignar el mismo tiempo y costo que el proyecto anterior"],
+    ans:1, exp:"La estimación de tres puntos (PERT) captura la incertidumbre explícitamente. Permite calcular un valor esperado y una distribución de probabilidad, lo cual es más honesto y útil para la toma de decisiones que una cifra puntual." },
+
+  { domain:"Planning", domainFull:"Planning Performance Domain",
+    q:"¿Qué significa que el plan de proyecto debe estar 'alineado con los beneficios de negocio' según el PMBOK 8?",
+    opts:["Que el plan debe maximizar el tiempo del equipo en reuniones","Que cada decisión de planificación debe poder justificarse en términos del valor que genera al negocio","Que el plan solo necesita satisfacer al sponsor, no al cliente","Que el presupuesto debe ser el mínimo posible"],
+    ans:1, exp:"El PMBOK 8 orienta la planificación hacia resultados de negocio, no solo hacia la entrega de actividades. Cada decisión sobre alcance, cronograma y recursos debe poder vincularse con los beneficios esperados del proyecto." },
+
+  { domain:"Planning", domainFull:"Planning Performance Domain",
+    q:"¿Cuál es la diferencia entre un plan de gestión de riesgos y un registro de riesgos?",
+    opts:["Son el mismo documento con nombres diferentes","El plan define cómo se gestionarán los riesgos; el registro documenta los riesgos identificados, su análisis y las respuestas planificadas","El plan es para amenazas; el registro es para oportunidades","El registro se crea al inicio; el plan se crea al final"],
+    ans:1, exp:"El plan de gestión de riesgos define el enfoque, herramientas, roles y procesos para gestionar riesgos. El registro de riesgos es el documento vivo donde se listan los riesgos específicos del proyecto con su análisis y respuestas." },
+
+  { domain:"Planning", domainFull:"Planning Performance Domain",
+    q:"Un proyecto tiene una fecha de entrega fija (hard deadline) por razones regulatorias. Al planificar, descubres que el cronograma base tiene 6 semanas de retraso. ¿Cuál es tu PRIMERA acción?",
+    opts:["Aceptar el retraso y comunicarlo al cliente al final del proyecto","Pedir al equipo que trabaje horas extra sin análisis previo","Analizar el cronograma para identificar actividades en la ruta crítica que pueden ser aceleradas, paralelizadas o eliminadas","Cambiar la fecha de entrega en el sistema sin informar al sponsor"],
+    ans:2, exp:"Ante un cronograma incumplible, el PM primero analiza la ruta crítica para identificar oportunidades de compresión (fast tracking, crashing). Solo después de este análisis se presentan opciones informadas al sponsor." },
+
+  { domain:"Planning", domainFull:"Planning Performance Domain",
+    q:"¿Qué es la línea base del proyecto y por qué es importante?",
+    opts:["El presupuesto mínimo para ejecutar el proyecto","El plan aprobado (alcance, cronograma, costo) que sirve como referencia para medir el desempeño y gestionar cambios","El primer borrador del plan de proyecto antes de aprobación","El plan ideal sin restricciones de recursos"],
+    ans:1, exp:"La línea base es el plan aprobado formalmente. Sin ella, no hay referencia para medir variaciones, gestionar cambios o reportar desempeño. Todo cambio aprobado actualiza la línea base; sin control de cambios, la línea base pierde sentido." },
+
+  { domain:"Planning", domainFull:"Planning Performance Domain",
+    q:"Al planificar las comunicaciones del proyecto, ¿cuál es el factor MÁS importante a considerar?",
+    opts:["Usar siempre el email como canal principal por ser el más formal","Adaptar el formato, frecuencia y contenido de las comunicaciones a las necesidades e intereses de cada grupo de stakeholders","Enviar el mismo reporte a todos los stakeholders para garantizar consistencia","Comunicar solo cuando hay problemas o cambios"],
+    ans:1, exp:"El plan de comunicaciones efectivo reconoce que stakeholders diferentes necesitan información diferente, en distintos formatos y frecuencias. Un enfoque único para todos garantiza que nadie reciba la información que realmente necesita." },
+
+  { domain:"Planning", domainFull:"Planning Performance Domain",
+    q:"¿Cuándo debe revisarse y potencialmente actualizarse el plan de proyecto?",
+    opts:["Solo al inicio y al final del proyecto","Al finalizar cada fase del proyecto","Continuamente, cuando hay cambios aprobados, nueva información o variaciones significativas respecto a la línea base","Solo cuando el sponsor lo solicite explícitamente"],
+    ans:2, exp:"El plan es un documento vivo. El PMBOK 8 enfatiza la planificación adaptativa: el plan debe actualizarse cuando hay cambios aprobados, nueva información relevante o variaciones que requieren replantear la estrategia de ejecución." },
+
+  // ══════════════════════════════════════════
+  // DOMINIO 5: PROJECT WORK (10 preguntas)
+  // ══════════════════════════════════════════
+  { domain:"Project Work", domainFull:"Project Work Performance Domain",
+    q:"Durante la ejecución, el equipo encuentra un impedimento técnico que bloquea el trabajo de 3 miembros. ¿Cuál es la responsabilidad del PM?",
+    opts:["Esperar a la próxima reunión de estado para abordarlo","Resolver el impedimento técnico personalmente, ya que el PM es el responsable de todo","Actuar rápidamente para eliminar el impedimento o escalar a quien corresponda, protegiendo la productividad del equipo","Documentar el impedimento en el registro de riesgos y continuar"],
+    ans:2, exp:"El PM como servant leader elimina impedimentos para que el equipo pueda fluir. La velocidad de respuesta es crítica — un bloqueo de 3 personas por varios días tiene alto costo. Puede resolverlo directamente o escalar, pero no puede ignorarlo." },
+
+  { domain:"Project Work", domainFull:"Project Work Performance Domain",
+    q:"¿Cuál de las siguientes describe MEJOR el rol del PM durante la ejecución del proyecto según el PMBOK 8?",
+    opts:["Supervisor que verifica el trabajo de cada miembro al final del día","Facilitador del flujo de trabajo que coordina, elimina obstáculos y asegura que el equipo tenga todo lo que necesita","Responsable técnico que toma todas las decisiones de diseño","Auditor que documenta cada desviación del plan para reportar al sponsor"],
+    ans:1, exp:"El PMBOK 8 posiciona al PM como facilitador, no como supervisor. El PM crea las condiciones para que el equipo pueda hacer su mejor trabajo: comunicación fluida, recursos disponibles y sin impedimentos en el camino." },
+
+  { domain:"Project Work", domainFull:"Project Work Performance Domain",
+    q:"Tu proveedor principal notifica que no puede cumplir con una entrega crítica. ¿Cuál es tu PRIMERA acción?",
+    opts:["Cancelar el contrato con el proveedor inmediatamente","Evaluar el impacto en el cronograma y los entregables, explorar opciones alternativas y comunicar a los stakeholders relevantes","Escalar al área legal para iniciar acciones por incumplimiento","Asumir la entrega internamente sin análisis previo"],
+    ans:1, exp:"Ante una falla de proveedor, el PM primero evalúa el impacto real en el proyecto. Luego explora opciones: ¿puede el proveedor entregarla tarde? ¿Hay alternativas? ¿Se puede replanificar? Con esa información, informa a stakeholders y toma decisiones." },
+
+  { domain:"Project Work", domainFull:"Project Work Performance Domain",
+    q:"¿Qué son los 'procurement' o adquisiciones en la gestión de proyectos y cuándo es relevante gestionarlos?",
+    opts:["Solo son relevantes en proyectos de construcción","El proceso de obtener bienes y servicios externos al proyecto, relevante siempre que el equipo no pueda producir algo internamente con la calidad o tiempo requeridos","El proceso de comprar software de gestión de proyectos","Solo aplica cuando el proveedor es internacional"],
+    ans:1, exp:"La gestión de adquisiciones aplica a cualquier proyecto que depende de proveedores externos. El PMBOK 8 enfatiza contratos orientados a valor y colaboración, no solo transacciones. El PM debe gestionar la relación, no solo el contrato." },
+
+  { domain:"Project Work", domainFull:"Project Work Performance Domain",
+    q:"¿Cómo debe el PM gestionar el 'gold plating' (sobrecumplimiento) que el equipo hace sin autorización?",
+    opts:["Permitirlo ya que mejora la calidad del producto","Celebrarlo porque demuestra iniciativa del equipo","Abordarlo directamente: el gold plating consume recursos y puede introducir riesgos no evaluados sin generar valor aprobado","Documentarlo como un cambio aprobado retroactivamente"],
+    ans:2, exp:"El gold plating (agregar características no solicitadas) parece positivo pero consume recursos, introduce riesgo y puede generar expectativas no sostenibles. Todo el trabajo debe alinearse con el alcance aprobado y las prioridades del cliente." },
+
+  { domain:"Project Work", domainFull:"Project Work Performance Domain",
+    q:"Durante la ejecución, el PM detecta que el equipo ha desarrollado una solución técnica diferente a la especificada en el plan, aunque argumentan que es mejor. ¿Qué debe hacer?",
+    opts:["Aprobar la solución alternativa ya que el equipo técnico sabe más","Revertir inmediatamente a la solución original sin análisis","Evaluar la solución alternativa contra los criterios de aceptación, consultar con los stakeholders relevantes y procesar el cambio formalmente si corresponde","Reportarlo como un riesgo y continuar con la solución original"],
+    ans:2, exp:"Un cambio técnico no autorizado, aunque sea mejor, debe seguir el proceso de control de cambios. El PM evalúa la solución, involucra a los stakeholders y documenta el cambio. Las decisiones unilaterales del equipo, aunque bien intencionadas, son scope creep." },
+
+  { domain:"Project Work", domainFull:"Project Work Performance Domain",
+    q:"¿Qué papel juega la inteligencia artificial en la gestión de proyectos según el PMBOK 8?",
+    opts:["No tiene relevancia ya que la gestión de proyectos es exclusivamente humana","La IA puede automatizar tareas repetitivas, analizar datos de desempeño y apoyar la toma de decisiones, y el PM moderno debe saber cuándo y cómo incorporarla","La IA reemplazará completamente al PM en los próximos años","Solo es útil en proyectos tecnológicos"],
+    ans:1, exp:"El PMBOK 8 reconoce explícitamente la IA como herramienta en la gestión de proyectos. El PM moderno debe evaluar qué tareas pueden beneficiarse de automatización o análisis inteligente, sin perder el juicio humano y contextual." },
+
+  { domain:"Project Work", domainFull:"Project Work Performance Domain",
+    q:"¿Cuál es el propósito de las reuniones de standup diario en un equipo ágil?",
+    opts:["Reportar el avance al PM para que actualice el cronograma","Sincronizar brevemente al equipo: qué se hizo, qué se hará y qué impedimentos hay — en no más de 15 minutos","Revisar la calidad del código del día anterior","Tomar decisiones técnicas importantes del sprint"],
+    ans:1, exp:"El standup (Daily Scrum) es una sincronización breve del equipo, no un reporte al PM. El equipo se coordina entre sí. 15 minutos máximo. Los impedimentos identificados se resuelven fuera del standup, no durante." },
+
+  { domain:"Project Work", domainFull:"Project Work Performance Domain",
+    q:"El ambiente de trabajo del equipo se ha deteriorado por exceso de presión y horas extra. ¿Cuál es la responsabilidad del PM?",
+    opts:["No es responsabilidad del PM, sino de Recursos Humanos","Continuar con la presión ya que el cronograma es prioritario","Abordar la situación activamente: identificar las causas, redistribuir carga si es posible y proteger la sostenibilidad del equipo","Pedir al equipo que sea más resiliente"],
+    ans:2, exp:"La sostenibilidad del ritmo de trabajo es responsabilidad del PM. Un equipo quemado produce trabajo de baja calidad, comete errores y tiene alta rotación. El PM debe proteger el bienestar del equipo como condición para la entrega de valor a largo plazo." },
+
+  { domain:"Project Work", domainFull:"Project Work Performance Domain",
+    q:"¿Qué es una lección aprendida y cuándo debe documentarse según el PMBOK 8?",
+    opts:["Un error grave que debe documentarse solo al final del proyecto","Conocimiento obtenido durante el proyecto sobre qué funcionó bien, qué no funcionó y qué se haría diferente, que debe capturarse continuamente a lo largo del proyecto","Un reporte de desempeño anual del equipo","Documentación técnica para proyectos futuros similares"],
+    ans:1, exp:"Las lecciones aprendidas deben capturarse continuamente, no solo al cierre. El PMBOK 8 enfatiza la captura en tiempo real para que el conocimiento esté disponible durante el proyecto y no se pierda con el tiempo o los cambios de equipo." },
+
+  // ══════════════════════════════════════════
+  // DOMINIO 6: DELIVERY (10 preguntas)
+  // ══════════════════════════════════════════
+  { domain:"Delivery", domainFull:"Delivery Performance Domain",
+    q:"En la revisión de sprint, el cliente rechaza una funcionalidad que el equipo consideraba 'terminada'. El equipo argumenta que cumplió la Definition of Done. ¿Qué debes hacer?",
+    opts:["Defender al equipo: la funcionalidad cumplió los estándares acordados","Investigar por qué la Definition of Done no refleja las expectativas reales del cliente y trabajar en alinearlas","Eliminar la Definition of Done para más flexibilidad","Escalar al sponsor para que tome la decisión"],
+    ans:1, exp:"La DoD debe reflejar el valor real para el cliente. Si hay desalineación, es un problema de comunicación de expectativas. El PM facilita su actualización colaborativa, no defiende una herramienta por encima del valor entregado." },
+
+  { domain:"Delivery", domainFull:"Delivery Performance Domain",
+    q:"A mitad del proyecto, el sponsor informa que el presupuesto se redujo en 20%. El plan actual es inviable. ¿Cuál es tu PRIMER paso?",
+    opts:["Continuar con el plan actual y reportar el problema solo si hay retraso","Analizar el impacto, identificar opciones de ajuste y presentar alternativas al sponsor para su decisión","Reducir la calidad para mantener alcance y cronograma","Renunciar al proyecto por ser inviable"],
+    ans:1, exp:"El PM analiza el impacto real y presenta opciones claras al sponsor. No es el PM quien decide qué sacrificar — es una decisión de negocio que requiere información objetiva y participación de los tomadores de decisiones." },
+
+  { domain:"Delivery", domainFull:"Delivery Performance Domain",
+    q:"¿Qué es el 'Benefits Realization Management' (Gestión de Realización de Beneficios) en el PMBOK 8?",
+    opts:["El proceso de calcular el ROI del proyecto antes de iniciarlo","El proceso continuo de asegurar que los beneficios prometidos del proyecto realmente se materialicen, incluso más allá del cierre del proyecto","La gestión del presupuesto del proyecto","El proceso de entrega de los entregables al cliente"],
+    ans:1, exp:"El PMBOK 8 amplía la responsabilidad del PM más allá de la entrega. Un proyecto puede entregar todos sus entregables y aun así fracasar si los beneficios de negocio no se materializan. El BRM asegura que el valor prometido se realice." },
+
+  { domain:"Delivery", domainFull:"Delivery Performance Domain",
+    q:"El equipo está entregando funcionalidades a tiempo, pero el cliente reporta que no está obteniendo el valor esperado. ¿Cuál es el problema central?",
+    opts:["El cliente tiene expectativas poco realistas","El equipo no tiene suficiente experiencia técnica","Hay una desalineación entre los entregables producidos y los beneficios reales que el cliente necesita","El proyecto necesita más recursos"],
+    ans:2, exp:"Este es el escenario clásico de 'proyecto exitoso, negocio fracasado'. El PM debe asegurarse de que lo que se entrega genere valor real, no solo que se cumplan las especificaciones técnicas. La alineación con los resultados de negocio es continua." },
+
+  { domain:"Delivery", domainFull:"Delivery Performance Domain",
+    q:"¿Cómo aborda el PMBOK 8 la sostenibilidad en la entrega de proyectos?",
+    opts:["La sostenibilidad no es relevante en la gestión de proyectos","La sostenibilidad es un criterio de calidad y éxito: el PM debe considerar el impacto ambiental, social y ético de las decisiones del proyecto","La sostenibilidad solo aplica a proyectos de energía o medio ambiente","La sostenibilidad es responsabilidad del sponsor, no del PM"],
+    ans:1, exp:"El PMBOK 8 incorpora la sostenibilidad como un criterio explícito de calidad y éxito en la entrega. El PM debe considerar el impacto a largo plazo de las decisiones del proyecto en el medio ambiente, la sociedad y la ética." },
+
+  { domain:"Delivery", domainFull:"Delivery Performance Domain",
+    q:"¿Cuál es la diferencia entre 'entregable' y 'beneficio realizado' según el PMBOK 8?",
+    opts:["Son el mismo concepto expresado de forma diferente","Un entregable es el producto o resultado tangible del proyecto; el beneficio realizado es el valor de negocio que ese entregable genera para la organización","Los entregables son internos; los beneficios son externos","Los beneficios se miden solo en términos económicos"],
+    ans:1, exp:"Esta distinción es central en el PMBOK 8. Un sistema de software es un entregable; la reducción del tiempo de procesamiento en 40% es el beneficio. El PM es responsable de ambos, no solo del entregable técnico." },
+
+  { domain:"Delivery", domainFull:"Delivery Performance Domain",
+    q:"El cliente solicita un cambio de alcance que agregaría 3 semanas al proyecto pero que, según él, es crítico para que el sistema sea útil. ¿Cómo debe abordarlo el PM?",
+    opts:["Rechazar el cambio porque el alcance ya está aprobado","Aprobar el cambio inmediatamente para satisfacer al cliente","Procesar el cambio formalmente: evaluar impacto en tiempo, costo y riesgos, presentar opciones y obtener aprobación del sponsor antes de proceder","Pedir al equipo que absorba el trabajo extra sin ajustar el cronograma"],
+    ans:2, exp:"Todo cambio de alcance debe pasar por el proceso de control de cambios. El PM evalúa el impacto completo, presenta opciones al sponsor y solo procede con aprobación formal. Esto protege el proyecto y mantiene la trazabilidad." },
+
+  { domain:"Delivery", domainFull:"Delivery Performance Domain",
+    q:"¿Qué es el 'scope creep' y por qué es peligroso para el proyecto?",
+    opts:["La adición planificada de nuevas funcionalidades en cada sprint","La expansión no controlada del alcance sin pasar por el proceso de control de cambios, que consume recursos no planificados y puede llevar al fracaso del proyecto","El ajuste normal del alcance cuando el cliente aprende más sobre sus necesidades","Un término ágil para describir la velocidad de entrega"],
+    ans:1, exp:"El scope creep es la acumulación de cambios no formalizados. Individualmente parecen pequeños, pero acumulados consumen presupuesto, tiempo y energía del equipo sin que nadie haya aprobado conscientemente ese uso de recursos." },
+
+  { domain:"Delivery", domainFull:"Delivery Performance Domain",
+    q:"¿Cuándo considera el PMBOK 8 que un proyecto ha sido 'exitoso'?",
+    opts:["Cuando se entrega a tiempo y dentro del presupuesto","Cuando el equipo está satisfecho con el trabajo realizado","Cuando los entregables cumplen las especificaciones técnicas aprobadas","Cuando los beneficios de negocio prometidos se materializan y la organización está en mejor posición que antes del proyecto"],
+    ans:3, exp:"El PMBOK 8 redefine el éxito: no basta con entregar a tiempo, dentro del presupuesto y con el alcance acordado. El éxito real se mide por la realización de beneficios y el valor generado para la organización y sus stakeholders." },
+
+  { domain:"Delivery", domainFull:"Delivery Performance Domain",
+    q:"Un proyecto entregó todos sus componentes técnicos perfectamente, pero los usuarios finales no adoptaron el sistema. ¿Qué responsabilidad tiene el PM?",
+    opts:["Ninguna, ya que la adopción es responsabilidad del área de Recursos Humanos","Ninguna, ya que el proyecto entregó lo acordado y se cerró correctamente","El PM debió incluir gestión del cambio organizacional y estrategias de adopción como parte de la entrega de valor del proyecto","La responsabilidad es del cliente, no del PM"],
+    ans:2, exp:"Un sistema no adoptado es un proyecto fallido, independientemente de su calidad técnica. El PMBOK 8 incluye la gestión del cambio organizacional como parte de la responsabilidad del PM para asegurar que el valor se realice efectivamente." },
+
+  // ══════════════════════════════════════════
+  // DOMINIO 7: MEASUREMENT (10 preguntas)
+  // ══════════════════════════════════════════
+  { domain:"Measurement", domainFull:"Measurement Performance Domain",
+    q:"Tu proyecto tiene SPI = 0.85 y CPI = 1.10. ¿Cuál es la interpretación más precisa?",
+    opts:["El proyecto está atrasado y gastando de más","El proyecto está adelantado en tiempo pero gastando de más","El proyecto está atrasado en cronograma pero por debajo del presupuesto","El proyecto está adelantado y por debajo del presupuesto"],
+    ans:2, exp:"SPI < 1 indica retraso en cronograma. CPI > 1 indica eficiencia en costos (gasta menos de lo planeado). El equipo es eficiente con el presupuesto pero necesita acelerar el ritmo de entrega." },
+
+  { domain:"Measurement", domainFull:"Measurement Performance Domain",
+    q:"¿Cuál es la diferencia entre métricas de proyecto y métricas de negocio según el PMBOK 8?",
+    opts:["Son lo mismo, solo cambia el nombre según el contexto","Las métricas de proyecto miden el desempeño interno (SPI, CPI, velocidad); las métricas de negocio miden el valor generado (ROI, satisfacción del cliente, reducción de costos operativos)","Las métricas de negocio solo las mide el CFO","Las métricas de proyecto son más importantes que las de negocio"],
+    ans:1, exp:"El PMBOK 8 exige que el PM conecte ambos tipos. Un proyecto puede estar 'en verde' en métricas de proyecto y en 'rojo' en métricas de negocio. El PM debe entender y reportar ambas dimensiones." },
+
+  { domain:"Measurement", domainFull:"Measurement Performance Domain",
+    q:"¿Qué son los OKRs y cómo se relacionan con la gestión de proyectos según el PMBOK 8?",
+    opts:["Son un tipo de contrato con el proveedor","Objectives and Key Results: un marco de definición de metas que el PM puede usar para conectar el trabajo del proyecto con los objetivos estratégicos de la organización","Son métricas financieras para el sponsor","Son lo mismo que los KPIs, solo que usados en empresas tecnológicas"],
+    ans:1, exp:"Los OKRs (popularizados por Google) definen qué se quiere lograr (objetivo) y cómo medir si se logró (resultados clave). El PMBOK 8 los integra como herramienta para alinear el proyecto con la estrategia organizacional." },
+
+  { domain:"Measurement", domainFull:"Measurement Performance Domain",
+    q:"¿Para qué sirve el indicador EAC (Estimate at Completion) en la gestión del valor ganado?",
+    opts:["Para medir la satisfacción del equipo al cierre del proyecto","Para proyectar cuánto costará el proyecto al finalizar, basado en el desempeño actual","Para calcular la cantidad de trabajo completado hasta la fecha","Para estimar cuántos días faltan para terminar el proyecto"],
+    ans:1, exp:"EAC proyecta el costo final del proyecto si el desempeño actual se mantiene. Es una herramienta de decisión: si el EAC supera el presupuesto original (BAC), el sponsor puede decidir intervenir antes de que sea demasiado tarde." },
+
+  { domain:"Measurement", domainFull:"Measurement Performance Domain",
+    q:"En un equipo Scrum, ¿qué mide la 'velocidad' y cuál es su principal utilidad?",
+    opts:["La velocidad a la que el equipo completa reuniones","La cantidad de puntos de historia completados por sprint, usada para predecir cuánto trabajo puede hacer el equipo en futuros sprints","La rapidez con que los miembros responden emails","El tiempo promedio de cada tarea del backlog"],
+    ans:1, exp:"La velocidad es una métrica de capacidad del equipo, no de productividad individual. Se usa para planificación: si el equipo promedia 40 puntos/sprint y hay 200 puntos en el backlog, se proyectan aproximadamente 5 sprints para completarlos." },
+
+  { domain:"Measurement", domainFull:"Measurement Performance Domain",
+    q:"Un proyecto reporta estar 'en verde' (SPI y CPI sobre 1.0), pero el cliente está insatisfecho. ¿Qué puede estar midiendo mal el PM?",
+    opts:["Nada, si los indicadores están en verde el cliente debe estar satisfecho","Las métricas técnicas están bien, pero no se están midiendo los resultados de negocio ni la satisfacción real del cliente","El SPI y CPI deben estar calculados incorrectamente","El cliente simplemente tiene expectativas poco razonables"],
+    ans:1, exp:"Este escenario ilustra el problema de gestionar solo con métricas de proyecto. El cliente puede estar insatisfecho porque no recibe el valor esperado, aunque el proyecto esté técnicamente dentro de tiempo y presupuesto." },
+
+  { domain:"Measurement", domainFull:"Measurement Performance Domain",
+    q:"¿Qué es el 'cycle time' en el contexto de métricas ágiles?",
+    opts:["El tiempo total del proyecto desde inicio hasta cierre","El tiempo que tarda una tarea desde que el equipo comienza a trabajar en ella hasta que está completada y lista para entregar","El tiempo de duración de cada sprint","El tiempo que tarda el cliente en aprobar un entregable"],
+    ans:1, exp:"El cycle time mide la eficiencia del flujo de trabajo del equipo. Un cycle time bajo indica que el equipo completa tareas rápidamente sin cuellos de botella. Es una métrica clave en Kanban para identificar impedimentos en el proceso." },
+
+  { domain:"Measurement", domainFull:"Measurement Performance Domain",
+    q:"¿Por qué el PMBOK 8 enfatiza que las métricas deben orientarse al valor y no solo al cronograma y costo?",
+    opts:["Porque el cronograma y el costo son métricas obsoletas que ya no se usan","Porque cumplir cronograma y presupuesto no garantiza que el proyecto genere los beneficios de negocio esperados","Porque las métricas de valor son más fáciles de calcular","Porque los stakeholders no entienden las métricas de cronograma y costo"],
+    ans:1, exp:"El PMBOK 8 reconoce que las métricas tradicionales de proyecto (tiempo, costo, alcance) son condiciones necesarias pero no suficientes para el éxito. Las métricas de valor miden si el proyecto realmente hace una diferencia para el negocio." },
+
+  { domain:"Measurement", domainFull:"Measurement Performance Domain",
+    q:"Un dashboard de proyecto muestra que el 80% de los hitos están completados a tiempo. Sin embargo, el 20% restante incluye los hitos más críticos para el cliente. ¿Cómo debes interpretar y comunicar esta información?",
+    opts:["Reportar que el proyecto está al 80% de cumplimiento como indicador positivo","Identificar que el 20% crítico representa el mayor riesgo y comunicar el estado real con contexto sobre la criticidad de los hitos pendientes","Calcular el promedio y reportar que el proyecto está en riesgo medio","Esperar a que los hitos críticos se completen antes de reportar"],
+    ans:1, exp:"Las métricas sin contexto pueden engañar. Un PM efectivo interpreta los datos con criterio: el 80% de hitos a tiempo no significa que el proyecto esté bien si el 20% pendiente es lo que más importa al cliente y al negocio." },
+
+  { domain:"Measurement", domainFull:"Measurement Performance Domain",
+    q:"¿Cuál es el propósito del TCPI (To-Complete Performance Index) en la gestión del valor ganado?",
+    opts:["Medir la eficiencia de costo hasta la fecha","Indicar la eficiencia de costo que el proyecto necesita mantener en el trabajo restante para cumplir con el presupuesto original o el EAC revisado","Calcular el porcentaje de trabajo completado","Proyectar la fecha final del proyecto"],
+    ans:1, exp:"El TCPI es un indicador de viabilidad: si el TCPI > 1.0, el proyecto necesita ser más eficiente que hasta ahora para terminar dentro del presupuesto. Un TCPI > 1.2 generalmente indica que el objetivo es poco realista." },
+
+  // ══════════════════════════════════════════
+  // DOMINIO 8: UNCERTAINTY (10 preguntas)
+  // ══════════════════════════════════════════
+  { domain:"Uncertainty", domainFull:"Uncertainty Performance Domain",
+    q:"Identificas un riesgo con alta probabilidad e impacto alto. Sin embargo, el costo de mitigarlo supera el presupuesto disponible. ¿Cuál es la respuesta MÁS apropiada?",
+    opts:["Ignorar el riesgo ya que no hay presupuesto","Transferir el riesgo a un tercero mediante contrato o seguro","Aceptar el riesgo activamente y definir un plan de contingencia detallado","Cancelar el proyecto porque el riesgo es demasiado alto"],
+    ans:2, exp:"Cuando la mitigación no es viable económicamente, la aceptación activa con plan de contingencia es la respuesta correcta. Se documenta el riesgo, se define un trigger y acciones de respuesta preparadas para cuando el riesgo se materialice." },
+
+  { domain:"Uncertainty", domainFull:"Uncertainty Performance Domain",
+    q:"En un proyecto ágil, el equipo descubre durante el sprint que una tecnología clave tiene una limitación crítica no conocida. ¿Qué debe hacer el PM?",
+    opts:["Esperar al final del sprint para reportarlo en la retrospectiva","Escalar inmediatamente al sponsor y pausar el sprint","Reunir al equipo para evaluar el impacto, explorar alternativas y comunicar transparentemente al PO y stakeholders","Ocultar el problema hasta encontrar una solución"],
+    ans:2, exp:"La transparencia y adaptación temprana son valores ágiles fundamentales. Reunir al equipo, evaluar opciones e informar a stakeholders permite decisiones informadas rápidas. La opacidad nunca es la respuesta correcta." },
+
+  { domain:"Uncertainty", domainFull:"Uncertainty Performance Domain",
+    q:"¿Cuál es la diferencia entre 'riesgo' e 'incertidumbre' según el PMBOK 8?",
+    opts:["Son sinónimos en la gestión de proyectos moderna","El riesgo es un evento incierto con probabilidad e impacto estimables; la incertidumbre abarca situaciones donde no se conoce lo suficiente para ni siquiera estimar probabilidades","El riesgo es siempre negativo; la incertidumbre puede ser positiva o negativa","La incertidumbre se gestiona solo en proyectos ágiles"],
+    ans:1, exp:"El PMBOK 8 expande el dominio más allá del riesgo para incluir la ambigüedad y complejidad. Algunos eventos no pueden estimarse probabilísticamente porque son desconocidos. El PM necesita estrategias diferentes para riesgo conocido vs. incertidumbre genuina." },
+
+  { domain:"Uncertainty", domainFull:"Uncertainty Performance Domain",
+    q:"¿Cuál es la diferencia entre 'Risk Appetite' y 'Risk Threshold' según el PMBOK 8?",
+    opts:["Son el mismo concepto con diferentes nombres","Risk Appetite: cuánto riesgo tolera la organización en general; Risk Threshold: el punto específico donde el riesgo se vuelve inaceptable y debe escalarse","Risk Appetite aplica a proyectos; Risk Threshold aplica a programas","Risk Threshold es siempre un número fijo; Risk Appetite varía por día"],
+    ans:1, exp:"Comprender ambos conceptos es esencial para la toma de decisiones. El Risk Appetite define la cultura de riesgo de la organización. El Risk Threshold es el límite operativo concreto que activa la escalación o la acción." },
+
+  { domain:"Uncertainty", domainFull:"Uncertainty Performance Domain",
+    q:"¿Qué son los entornos VUCA y cómo afectan la gestión de proyectos?",
+    opts:["VUCA es una herramienta de estimación de costos","VUCA (Volatility, Uncertainty, Complexity, Ambiguity) describe entornos donde los cambios son rápidos e impredecibles, requiriendo que el PM desarrolle resiliencia y capacidad de adaptación en lugar de solo planificación predictiva","VUCA solo aplica a proyectos militares y de defensa","VUCA es un marco ágil similar a Scrum"],
+    ans:1, exp:"El PMBOK 8 incorpora VUCA como contexto real de la gestión moderna. En entornos VUCA, la capacidad de adaptación y la resiliencia son más valiosas que planes detallados que se vuelven obsoletos rápidamente." },
+
+  { domain:"Uncertainty", domainFull:"Uncertainty Performance Domain",
+    q:"Tu proyecto depende críticamente de una regulación gubernamental que está en proceso de aprobación. Si la regulación cambia, el proyecto perdería su justificación de negocio. ¿Cómo debes gestionar este riesgo?",
+    opts:["Ignorarlo ya que no puedes controlar el proceso regulatorio","Documentarlo en el registro de riesgos con un plan de contingencia claro, monitorear el proceso regulatorio activamente e informar al sponsor sobre el impacto potencial","Cancelar el proyecto preventivamente","Continuar el proyecto ignorando el riesgo regulatorio"],
+    ans:1, exp:"Los riesgos externos no controlables requieren monitoreo activo y planes de contingencia claros. El PM no puede controlar la regulación, pero sí puede asegurar que los stakeholders estén informados y que el proyecto pueda pivotar si es necesario." },
+
+  { domain:"Uncertainty", domainFull:"Uncertainty Performance Domain",
+    q:"¿Cómo debe un PM gestionar las 'oportunidades' dentro del dominio de Uncertainty?",
+    opts:["Las oportunidades no son parte de la gestión de riesgos, solo las amenazas","Las oportunidades deben ignorarse para enfocarse en los problemas reales","Con el mismo rigor que las amenazas: identificarlas, analizarlas y explotar, compartir, mejorar o aceptar las más relevantes","Las oportunidades solo deben reportarse al sponsor, no gestionarse activamente"],
+    ans:2, exp:"El PMBOK 8 define el riesgo como cualquier evento incierto que puede afectar positiva o negativamente al proyecto. Las oportunidades son riesgos positivos. Gestionarlas activamente puede generar valor adicional para el proyecto." },
+
+  { domain:"Uncertainty", domainFull:"Uncertainty Performance Domain",
+    q:"Un proyecto altamente innovador tiene muchos riesgos desconocidos (unknown unknowns). ¿Cuál es la estrategia MÁS efectiva?",
+    opts:["Crear una lista exhaustiva de todos los riesgos posibles al inicio del proyecto","Usar ciclos cortos de entrega para aprender rápido, crear reservas de contingencia generosas y construir capacidad de adaptación en el equipo","Contratar un experto externo que conozca todos los riesgos posibles","Posponer el proyecto hasta que la incertidumbre sea menor"],
+    ans:1, exp:"Los unknown unknowns (riesgos que no sabemos que no sabemos) no pueden identificarse en un registro. La respuesta es diseñar el proyecto para adaptarse: ciclos cortos, aprendizaje rápido, reservas amplias y equipos resilientes." },
+
+  { domain:"Uncertainty", domainFull:"Uncertainty Performance Domain",
+    q:"¿Qué es el análisis de Monte Carlo y cómo se aplica en la gestión de riesgos?",
+    opts:["Una técnica de brainstorming para identificar riesgos en equipo","Una simulación computacional que ejecuta miles de escenarios usando rangos de estimación para producir distribuciones de probabilidad de fechas de finalización y costos del proyecto","Una matriz de probabilidad e impacto para clasificar riesgos","Un método ágil para gestionar riesgos en sprints"],
+    ans:1, exp:"Monte Carlo es análisis cuantitativo de riesgos. En lugar de un cronograma o presupuesto puntual, produce rangos con probabilidades: 'hay un 80% de probabilidad de terminar antes del 15 de junio'. Convierte la incertidumbre en información accionable." },
+
+  { domain:"Uncertainty", domainFull:"Uncertainty Performance Domain",
+    q:"El PMBOK 8 distingue entre situaciones 'complicadas' y 'complejas'. ¿Cuál es la diferencia práctica para el PM?",
+    opts:["No hay diferencia práctica, son sinónimos en gestión de proyectos","Lo complicado puede resolverse con experiencia y análisis experto; lo complejo es emergente e impredecible, requiriendo experimentación, adaptación y tolerancia a la ambigüedad","Lo complicado aplica a proyectos técnicos; lo complejo a proyectos humanos","Lo complejo siempre requiere más presupuesto que lo complicado"],
+    ans:1, exp:"Esta distinción (del marco Cynefin) es fundamental. Un motor complicado puede repararse con un experto. Un proyecto de transformación cultural es complejo: las interacciones humanas y organizacionales generan resultados emergentes que no pueden predecirse solo con análisis." }
 ];
 
+// ── QUIZ STATE ────────────────────────────────────────
+let activeQuestions = [];
 let currentQ = 0, score = 0, answered = false;
+let selectedDomainKey = 'all';
 
-function initQuiz() {
+// ── DOMAIN SELECTOR ───────────────────────────────────
+function selectDomain(key, btn) {
+  selectedDomainKey = key;
+  document.querySelectorAll('.domain-sel-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function startQuiz() {
+  if (selectedDomainKey === 'all') {
+    // Shuffle all 80 questions
+    activeQuestions = shuffle([...allQuestions]);
+  } else {
+    activeQuestions = shuffle(allQuestions.filter(q => q.domain === selectedDomainKey));
+  }
   currentQ = 0; score = 0; answered = false;
+  document.getElementById('quizSelector').style.display = 'none';
+  document.getElementById('quiz-container').style.display = 'block';
   document.getElementById('qResult').classList.remove('show');
   document.getElementById('qCard').style.display = 'block';
   renderQuestion();
 }
 
+function backToSelector() {
+  document.getElementById('quiz-container').style.display = 'none';
+  document.getElementById('quizSelector').style.display = 'block';
+}
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function initQuiz() { startQuiz(); }
+
 function renderQuestion() {
-  const q = questions[currentQ];
-  document.getElementById('qProgress').style.width = `${(currentQ / questions.length) * 100}%`;
-  document.getElementById('qLabel').textContent = `${currentQ} / ${questions.length}`;
+  const q = activeQuestions[currentQ];
+  const total = activeQuestions.length;
+  document.getElementById('qProgress').style.width = `${(currentQ / total) * 100}%`;
+  document.getElementById('qLabel').textContent = `${currentQ + 1} / ${total}`;
   document.getElementById('qScore').textContent = score;
-  document.getElementById('qDomain').textContent = q.domain;
+  document.getElementById('qDomain').textContent = q.domainFull;
   document.getElementById('qText').textContent = q.q;
   document.getElementById('qFeedback').className = 'quiz-feedback';
   document.getElementById('qNext').className = 'btn-next';
@@ -1533,7 +2188,7 @@ function renderQuestion() {
 function selectAnswer(idx) {
   if (answered) return;
   answered = true;
-  const q = questions[currentQ];
+  const q = activeQuestions[currentQ];
   const opts = document.querySelectorAll('.quiz-option');
   opts.forEach(o => o.disabled = true);
 
@@ -1555,26 +2210,28 @@ function selectAnswer(idx) {
 
 function nextQuestion() {
   currentQ++;
-  if (currentQ >= questions.length) showResult();
+  if (currentQ >= activeQuestions.length) showResult();
   else renderQuestion();
 }
 
 function showResult() {
   document.getElementById('qCard').style.display = 'none';
   document.getElementById('qProgress').style.width = '100%';
-  document.getElementById('qLabel').textContent = `${questions.length} / ${questions.length}`;
+  const total = activeQuestions.length;
+  document.getElementById('qLabel').textContent = `${total} / ${total}`;
   const result = document.getElementById('qResult');
   result.classList.add('show');
-  document.getElementById('rScore').textContent = `${score}/10`;
-  const pct = score / 10;
+  document.getElementById('rScore').textContent = `${score}/${total}`;
+  document.getElementById('rLabel').textContent = `de ${total} preguntas correctas`;
+  const pct = score / total;
   let msg;
-  if (pct >= 0.8) msg = "¡Excelente resultado! Estás en el camino correcto. El examen PMP real requiere consistencia — sigue practicando con el curso para llegar al 100%.";
-  else if (pct >= 0.6) msg = "Buen intento. Hay áreas donde puedes mejorar tu criterio situacional. El curso te ayudará a entender el 'por qué' detrás de cada respuesta.";
-  else msg = "El examen PMP mide juicio, no memoria. Es normal que al inicio el puntaje sea bajo — lo importante es entender la lógica. El curso completo te dará ese fundamento.";
+  if (pct >= 0.8) msg = "¡Excelente resultado! Estás en el camino correcto. El examen PMP real requiere consistencia — sigue practicando todos los dominios para llegar al 100%.";
+  else if (pct >= 0.6) msg = "Buen intento. Hay áreas donde puedes mejorar tu criterio situacional. Practica los dominios donde tuviste más errores y revisa las explicaciones de cada pregunta.";
+  else msg = "El examen PMP mide juicio, no memoria. Es normal que al inicio el puntaje sea bajo — lo importante es entender la lógica de cada respuesta. El curso completo te dará ese fundamento.";
   document.getElementById('rMsg').textContent = msg;
 }
 
-function restartQuiz() { initQuiz(); }
+function restartQuiz() { startQuiz(); }
 
 // ── DOMAINS DATA ─────────────────────────────────────
 const domains = [
